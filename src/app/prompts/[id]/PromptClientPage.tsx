@@ -1,13 +1,43 @@
 'use client';
 
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Prompt } from '@/lib/types';
 
 const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
-  const handleCopy = () => {
-    if (prompt) {
-      navigator.clipboard.writeText(prompt.prompt_text);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    if (!prompt) return;
+
+    const text = prompt.prompt_text ?? '';
+
+    // Try modern clipboard API first
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        // Fallback for old browsers: create a temporary textarea
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+      }
+
+      setCopied(true);
+      // сбросим индикацию через 2 секунды
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      // в консоль — для диагностики
+      // eslint-disable-next-line no-console
+      console.error('Copy failed', err);
+      // ничего не делаем дальше; можно показать уведомление в будущем
     }
   };
 
@@ -24,7 +54,7 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
           <pre className="whitespace-pre-wrap break-words">{prompt.prompt_text}</pre>
         </div>
         <Button onClick={handleCopy} className="mb-8">
-          Copy to clipboard
+          {copied ? 'Copied!' : 'Copy to clipboard'}
         </Button>
         <div className="flex gap-2">
           {prompt.tags && prompt.tags.split(',').map((tag: string) => (
