@@ -10,7 +10,8 @@ db.serialize(() => {
       description TEXT,
       category TEXT NOT NULL,
       prompt_text TEXT NOT NULL,
-      tags TEXT
+      tags TEXT,
+      language TEXT DEFAULT 'en'
     )
   `);
 

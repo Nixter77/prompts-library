@@ -1,0 +1,43 @@
+export const translations = {
+  en: {
+    nav_home: 'Home',
+    nav_categories: 'Categories',
+    nav_about: 'About',
+    nav_add_prompt: 'Add Prompt',
+    home_title: 'Prompts Library',
+    home_description: 'A collection of prompts for programming, image generation, and data analysis.',
+    home_button: 'Go to library',
+    categories_title: 'Categories',
+    categories_description: 'Browse prompts by category',
+    category_programming: 'Programming',
+    category_programming_desc: 'Prompts for all your programming needs.',
+    category_images: 'Images',
+    category_images_desc: 'Generate stunning images with these prompts.',
+    category_data_analysis: 'Data Analysis',
+    category_data_analysis_desc: 'Analyze your data with these prompts.',
+    no_prompts_found: 'No prompts found for this category yet.',
+    search_placeholder: 'Search prompts...',
+  },
+  ru: {
+    nav_home: 'Главная',
+    nav_categories: 'Категории',
+    nav_about: 'О нас',
+    nav_add_prompt: 'Добавить промпт',
+    home_title: 'Библиотека промптов',
+    home_description: 'Коллекция промптов для программирования, генерации изображений и анализа данных.',
+    home_button: 'Перейти в библиотеку',
+    categories_title: 'Категории',
+    categories_description: 'Просмотр промптов по категориям',
+    category_programming: 'Программирование',
+    category_programming_desc: 'Промпты для всех ваших задач по программированию.',
+    category_images: 'Изображения',
+    category_images_desc: 'Создавайте потрясающие изображения с помощью этих промптов.',
+    category_data_analysis: 'Анализ данных',
+    category_data_analysis_desc: 'Анализируйте данные с помощью этих промптов.',
+    no_prompts_found: 'Промпты для этой категории пока не найдены.',
+    search_placeholder: 'Поиск промптов...',
+  },
+};
+
+export type Language = 'en' | 'ru';
+export type TranslationKey = keyof typeof translations.en;
