@@ -40,6 +40,7 @@ export async function POST(request: Request) {
     const category = typeof body.category === 'string' ? body.category : '';
     const promptText = typeof body.prompt_text === 'string' ? body.prompt_text.trim() : '';
     const rawTags = Array.isArray(body.tags) ? body.tags : [];
+    const language = typeof body.language === 'string' ? body.language : 'en';
 
     if (!title || !category || !promptText) {
       return NextResponse.json({ message: 'Title, category, and prompt text are required.' }, { status: 400 });
@@ -53,13 +54,14 @@ export async function POST(request: Request) {
     const id = randomUUID();
 
     await db.run(
-      'INSERT INTO prompts (id, title, description, category, prompt_text, tags) VALUES (?, ?, ?, ?, ?, ?)',
+      'INSERT INTO prompts (id, title, description, category, prompt_text, tags, language) VALUES (?, ?, ?, ?, ?, ?, ?)',
       id,
       title,
       description,
       normalizedCategory,
       promptText,
-      normalizedTags.length > 0 ? normalizedTags.join(',') : null
+      normalizedTags.length > 0 ? normalizedTags.join(',') : null,
+      language
     );
 
     return NextResponse.json({ message: 'Prompt added successfully!', id });
