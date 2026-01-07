@@ -13,6 +13,7 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [language, setLanguage] = useState('en');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -36,6 +37,7 @@ const AddPromptPage = () => {
           category: normalizedCategory,
           prompt_text: promptText,
           tags: tagList,
+          language,
         }),
       });
 
@@ -86,6 +88,25 @@ const AddPromptPage = () => {
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
+        <div className="flex gap-4 items-center">
+          <label className="font-medium">Language:</label>
+          <div className="flex gap-2">
+            <Button
+              type="button"
+              variant={language === 'en' ? 'default' : 'outline'}
+              onClick={() => setLanguage('en')}
+            >
+              English
+            </Button>
+            <Button
+              type="button"
+              variant={language === 'ru' ? 'default' : 'outline'}
+              onClick={() => setLanguage('ru')}
+            >
+              Russian
+            </Button>
+          </div>
+        </div>
         <Button type="submit">Add prompt</Button>
       </form>
     </div>
