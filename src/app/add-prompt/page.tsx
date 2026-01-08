@@ -13,10 +13,12 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const normalizedCategory = slugifyCategory(category);
@@ -50,6 +52,7 @@ const AddPromptPage = () => {
     } catch (error) {
       console.error('Error adding prompt:', error);
       alert(`Error adding prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setIsSubmitting(false);
     }
   };
 
@@ -86,7 +89,7 @@ const AddPromptPage = () => {
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
-        <Button type="submit">Add prompt</Button>
+        <Button type="submit" loading={isSubmitting}>Add prompt</Button>
       </form>
     </div>
   );
