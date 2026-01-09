@@ -21,14 +21,19 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   });
 
   try {
-    // Filter by language in DB
-    const allPrompts = await db.all<Prompt[]>(
-        'SELECT * FROM prompts WHERE language = ?',
-        lang
+    // Filter by language AND category in DB for better performance
+    // Indexes on language and category (and composite index) are created in init.js
+    const promptsRaw = await db.all<Prompt[]>(
+      'SELECT * FROM prompts WHERE language = ? AND category = ?',
+      lang,
+      categorySlug
     );
-    const prompts = allPrompts
-      .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-      .map((prompt) => ({ ...prompt, category: categorySlug }));
+
+    // Ensure category is consistent (though it should be if DB content is correct)
+    const prompts = promptsRaw.map((prompt) => ({
+      ...prompt,
+      category: categorySlug,
+    }));
 
     // Get translated label if possible
     let categoryLabel = formatCategoryLabel(categorySlug);
