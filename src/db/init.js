@@ -17,6 +17,12 @@ db.serialize(() => {
     )
   `);
 
+  // Add indexes for frequently queried columns
+  db.run('CREATE INDEX IF NOT EXISTS idx_prompts_category ON prompts(category)');
+  db.run('CREATE INDEX IF NOT EXISTS idx_prompts_language ON prompts(language)');
+  // Composite index for common query pattern
+  db.run('CREATE INDEX IF NOT EXISTS idx_prompts_language_category ON prompts(language, category)');
+
   // Clear existing data to avoid duplicates on re-init
   db.run('DELETE FROM prompts');
 
