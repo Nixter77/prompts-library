@@ -35,7 +35,7 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       // в консоль — для диагностики
-      // eslint-disable-next-line no-console
+
       console.error('Copy failed', err);
       // ничего не делаем дальше; можно показать уведомление в будущем
     }
