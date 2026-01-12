@@ -46,10 +46,35 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Title, category, and prompt text are required.' }, { status: 400 });
     }
 
+    // Input validation: Length limits
+    if (title.length > 200) {
+      return NextResponse.json({ message: 'Title exceeds maximum length of 200 characters.' }, { status: 400 });
+    }
+    if (description && description.length > 1000) {
+      return NextResponse.json({ message: 'Description exceeds maximum length of 1000 characters.' }, { status: 400 });
+    }
+    if (category.length > 100) {
+      return NextResponse.json({ message: 'Category exceeds maximum length of 100 characters.' }, { status: 400 });
+    }
+    if (promptText.length > 10000) {
+      return NextResponse.json({ message: 'Prompt text exceeds maximum length of 10000 characters.' }, { status: 400 });
+    }
+
+    // Tag validation
+    if (rawTags.length > 20) {
+      return NextResponse.json({ message: 'Maximum of 20 tags allowed.' }, { status: 400 });
+    }
+
     const normalizedCategory = slugifyCategory(category);
     const normalizedTags = rawTags
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
       .filter((tag) => tag.length > 0);
+
+    for (const tag of normalizedTags) {
+      if (tag.length > 50) {
+        return NextResponse.json({ message: 'Tag exceeds maximum length of 50 characters.' }, { status: 400 });
+      }
+    }
 
     const id = randomUUID();
 
