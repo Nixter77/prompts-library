@@ -17,6 +17,11 @@ db.serialize(() => {
     )
   `);
 
+  // Create index for performance
+  db.run(`
+    CREATE INDEX IF NOT EXISTS idx_prompts_language_category ON prompts(language, category);
+  `);
+
   // Clear existing data to avoid duplicates on re-init
   db.run('DELETE FROM prompts');
 
