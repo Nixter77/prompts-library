@@ -46,6 +46,53 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Title, category, and prompt text are required.' }, { status: 400 });
     }
 
+    // Input validation limits
+    const MAX_TITLE_LENGTH = 200;
+    const MAX_DESCRIPTION_LENGTH = 1000;
+    const MAX_CATEGORY_LENGTH = 100;
+    const MAX_PROMPT_TEXT_LENGTH = 10000;
+    const MAX_TAG_LENGTH = 50;
+    const MAX_TAGS_COUNT = 20;
+
+    if (title.length > MAX_TITLE_LENGTH) {
+      return NextResponse.json(
+        { message: `Title exceeds maximum length of ${MAX_TITLE_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+    if (description && description.length > MAX_DESCRIPTION_LENGTH) {
+      return NextResponse.json(
+        { message: `Description exceeds maximum length of ${MAX_DESCRIPTION_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+    if (category.length > MAX_CATEGORY_LENGTH) {
+      return NextResponse.json(
+        { message: `Category exceeds maximum length of ${MAX_CATEGORY_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+    if (promptText.length > MAX_PROMPT_TEXT_LENGTH) {
+      return NextResponse.json(
+        { message: `Prompt text exceeds maximum length of ${MAX_PROMPT_TEXT_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+    if (rawTags.length > MAX_TAGS_COUNT) {
+      return NextResponse.json(
+        { message: `Too many tags. Maximum is ${MAX_TAGS_COUNT}.` },
+        { status: 400 }
+      );
+    }
+    for (const tag of rawTags) {
+      if (typeof tag === 'string' && tag.length > MAX_TAG_LENGTH) {
+        return NextResponse.json(
+          { message: `Tag '${tag.substring(0, 20)}...' exceeds maximum length of ${MAX_TAG_LENGTH} characters.` },
+          { status: 400 }
+        );
+      }
+    }
+
     const normalizedCategory = slugifyCategory(category);
     const normalizedTags = rawTags
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
