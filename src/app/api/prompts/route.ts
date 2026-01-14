@@ -1,35 +1,36 @@
 import { NextResponse } from 'next/server';
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
-import { Prompt } from '@/lib/types';
-import { randomUUID } from 'crypto';
-import path from 'path';
+import { supabaseAdmin } from '@/lib/supabase';
 import { slugifyCategory } from '@/lib/utils';
 
 export async function GET() {
-  const db = await open({
-    filename: path.join(process.cwd(), 'database.sqlite'),
-    driver: sqlite3.Database,
-  });
-
   try {
-    const prompts = await db.all<Prompt[]>('SELECT * FROM prompts');
+    const { data: prompts, error } = await supabaseAdmin
+      .from('prompts')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (error) {
+      return NextResponse.json(
+        { message: 'Error fetching prompts', error: error.message },
+        { status: 500 }
+      );
+    }
+
     const normalizedPrompts = prompts.map((prompt) => ({
       ...prompt,
       category: slugifyCategory(prompt.category),
     }));
+
     return NextResponse.json(normalizedPrompts);
-  } finally {
-    await db.close();
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
+    );
   }
 }
 
 export async function POST(request: Request) {
-  const db = await open({
-    filename: path.join(process.cwd(), 'database.sqlite'),
-    driver: sqlite3.Database,
-  });
-
   try {
     const body = (await request.json()) as Record<string, unknown>;
     const title = typeof body.title === 'string' ? body.title.trim() : '';
@@ -40,10 +41,12 @@ export async function POST(request: Request) {
     const category = typeof body.category === 'string' ? body.category : '';
     const promptText = typeof body.prompt_text === 'string' ? body.prompt_text.trim() : '';
     const rawTags = Array.isArray(body.tags) ? body.tags : [];
-    const language = typeof body.language === 'string' ? body.language : 'en';
 
     if (!title || !category || !promptText) {
-      return NextResponse.json({ message: 'Title, category, and prompt text are required.' }, { status: 400 });
+      return NextResponse.json(
+        { message: 'Title, category, and prompt text are required.' },
+        { status: 400 }
+      );
     }
 
     const normalizedCategory = slugifyCategory(category);
@@ -51,21 +54,30 @@ export async function POST(request: Request) {
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
       .filter((tag) => tag.length > 0);
 
-    const id = randomUUID();
+    const { data, error } = await supabaseAdmin
+      .from('prompts')
+      .insert({
+        title,
+        description,
+        category: normalizedCategory,
+        prompt_text: promptText,
+        tags: normalizedTags.length > 0 ? normalizedTags : null,
+      })
+      .select('id')
+      .single();
 
-    await db.run(
-      'INSERT INTO prompts (id, title, description, category, prompt_text, tags, language) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      id,
-      title,
-      description,
-      normalizedCategory,
-      promptText,
-      normalizedTags.length > 0 ? normalizedTags.join(',') : null,
-      language
+    if (error) {
+      return NextResponse.json(
+        { message: 'Error creating prompt', error: error.message },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ message: 'Prompt added successfully!', id: data.id });
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
     );
-
-    return NextResponse.json({ message: 'Prompt added successfully!', id });
-  } finally {
-    await db.close();
   }
 }

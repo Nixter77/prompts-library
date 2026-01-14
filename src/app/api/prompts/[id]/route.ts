@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
-import { Prompt } from '@/lib/types';
-import path from 'path';
+import { supabaseAdmin } from '@/lib/supabase';
 
 export async function GET(_request: NextRequest, context: { params: Promise<{ id: string }> }) {
   const { id } = await context.params;
@@ -11,20 +8,48 @@ export async function GET(_request: NextRequest, context: { params: Promise<{ id
     return NextResponse.json({ message: 'Prompt id is required.' }, { status: 400 });
   }
 
-  const db = await open({
-    filename: path.join(process.cwd(), 'database.sqlite'),
-    driver: sqlite3.Database,
-  });
-
   try {
-    const prompt = await db.get<Prompt>('SELECT * FROM prompts WHERE id = ?', id);
+    const { data: prompt, error } = await supabaseAdmin
+      .from('prompts')
+      .select('*')
+      .eq('id', id)
+      .single();
 
-    if (!prompt) {
+    if (error || !prompt) {
       return NextResponse.json({ message: 'Prompt not found.' }, { status: 404 });
     }
 
     return NextResponse.json(prompt);
-  } finally {
-    await db.close();
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function DELETE(_request: NextRequest, context: { params: Promise<{ id: string }> }) {
+  const { id } = await context.params;
+
+  if (!id) {
+    return NextResponse.json({ message: 'Prompt id is required.' }, { status: 400 });
+  }
+
+  try {
+    const { error } = await supabaseAdmin
+      .from('prompts')
+      .delete()
+      .eq('id', id);
+
+    if (error) {
+      return NextResponse.json({ message: 'Error deleting prompt.' }, { status: 500 });
+    }
+
+    return NextResponse.json({ message: 'Prompt deleted successfully!' });
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Internal server error' },
+      { status: 500 }
+    );
   }
 }

@@ -1,7 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import sqlite3 from 'sqlite3';
-import { open } from 'sqlite';
-import path from 'path';
+import { supabaseAdmin } from '@/lib/supabase';
 import { cookies } from 'next/headers';
 import { translations, Language } from '@/lib/translations';
 import { BookOpen, FolderOpen, Globe, Code, Image, BarChart3, CheckCircle } from 'lucide-react';
@@ -11,25 +9,25 @@ const AboutPage = async () => {
   const lang = (cookieStore.get('NEXT_LOCALE')?.value as Language) || 'en';
   const t = translations[lang] || translations['en'];
 
-  // Get statistics from database
-  const db = await open({
-    filename: path.join(process.cwd(), 'database.sqlite'),
-    driver: sqlite3.Database,
-  });
-
   let promptCount = 0;
   let categoryCount = 0;
 
   try {
-    const countResult = await db.get<{ count: number }>('SELECT COUNT(*) as count FROM prompts');
-    promptCount = countResult?.count || 0;
+    const { count } = await supabaseAdmin
+      .from('prompts')
+      .select('*', { count: 'exact', head: true });
+    promptCount = count || 0;
 
-    const categoryResult = await db.get<{ count: number }>(
-      'SELECT COUNT(DISTINCT category) as count FROM prompts'
-    );
-    categoryCount = categoryResult?.count || 0;
-  } finally {
-    await db.close();
+    const { data: categories } = await supabaseAdmin
+      .from('prompts')
+      .select('category');
+
+    if (categories) {
+      const uniqueCategories = new Set(categories.map(c => c.category));
+      categoryCount = uniqueCategories.size;
+    }
+  } catch (error) {
+    console.error('Error fetching stats:', error);
   }
 
   const stats = [
