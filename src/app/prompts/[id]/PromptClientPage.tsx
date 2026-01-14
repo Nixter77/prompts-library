@@ -57,7 +57,7 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
           {copied ? 'Copied!' : 'Copy to clipboard'}
         </Button>
         <div className="flex gap-2">
-          {prompt.tags && prompt.tags.split(',').map((tag: string) => (
+          {prompt.tags && Array.isArray(prompt.tags) && prompt.tags.map((tag: string) => (
             <Badge key={tag}>{tag}</Badge>
           ))}
         </div>
