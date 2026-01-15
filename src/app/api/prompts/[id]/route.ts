@@ -21,6 +21,7 @@ export async function GET(_request: NextRequest, context: { params: Promise<{ id
 
     return NextResponse.json(prompt);
   } catch (error) {
+    console.error('Unexpected error in GET /api/prompts/[id]:', error);
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
@@ -47,6 +48,7 @@ export async function DELETE(_request: NextRequest, context: { params: Promise<{
 
     return NextResponse.json({ message: 'Prompt deleted successfully!' });
   } catch (error) {
+    console.error('Unexpected error in DELETE /api/prompts/[id]:', error);
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
