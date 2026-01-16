@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useRouter } from 'next/navigation';
 import { slugifyCategory } from '@/lib/utils';
+import { Loader2 } from 'lucide-react';
 
 const AddPromptPage = () => {
   const [title, setTitle] = useState('');
@@ -13,10 +14,12 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const normalizedCategory = slugifyCategory(category);
@@ -50,6 +53,8 @@ const AddPromptPage = () => {
     } catch (error) {
       console.error('Error adding prompt:', error);
       alert(`Error adding prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -86,7 +91,10 @@ const AddPromptPage = () => {
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
-        <Button type="submit">Add prompt</Button>
+        <Button type="submit" disabled={isLoading}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? 'Adding...' : 'Add prompt'}
+        </Button>
       </form>
     </div>
   );
