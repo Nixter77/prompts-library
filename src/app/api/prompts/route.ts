@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { slugifyCategory } from '@/lib/utils';
 
+// Input validation limits
+const MAX_TITLE_LENGTH = 200;
+const MAX_DESCRIPTION_LENGTH = 1000;
+const MAX_CATEGORY_LENGTH = 100;
+const MAX_PROMPT_TEXT_LENGTH = 10000;
+const MAX_TAG_LENGTH = 50;
+const MAX_TAGS_COUNT = 20;
+
 export async function GET() {
   try {
     const { data: prompts, error } = await supabaseAdmin
@@ -10,8 +18,9 @@ export async function GET() {
       .order('created_at', { ascending: false });
 
     if (error) {
+      console.error('Error fetching prompts:', error);
       return NextResponse.json(
-        { message: 'Error fetching prompts', error: error.message },
+        { message: 'Error fetching prompts' },
         { status: 500 }
       );
     }
@@ -23,6 +32,7 @@ export async function GET() {
 
     return NextResponse.json(normalizedPrompts);
   } catch (error) {
+    console.error('Internal server error in GET /api/prompts:', error);
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
@@ -42,9 +52,38 @@ export async function POST(request: Request) {
     const promptText = typeof body.prompt_text === 'string' ? body.prompt_text.trim() : '';
     const rawTags = Array.isArray(body.tags) ? body.tags : [];
 
+    // Validation
     if (!title || !category || !promptText) {
       return NextResponse.json(
         { message: 'Title, category, and prompt text are required.' },
+        { status: 400 }
+      );
+    }
+
+    if (title.length > MAX_TITLE_LENGTH) {
+      return NextResponse.json(
+        { message: `Title exceeds maximum length of ${MAX_TITLE_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+
+    if (description && description.length > MAX_DESCRIPTION_LENGTH) {
+      return NextResponse.json(
+        { message: `Description exceeds maximum length of ${MAX_DESCRIPTION_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+
+    if (category.length > MAX_CATEGORY_LENGTH) {
+      return NextResponse.json(
+        { message: `Category exceeds maximum length of ${MAX_CATEGORY_LENGTH} characters.` },
+        { status: 400 }
+      );
+    }
+
+    if (promptText.length > MAX_PROMPT_TEXT_LENGTH) {
+      return NextResponse.json(
+        { message: `Prompt text exceeds maximum length of ${MAX_PROMPT_TEXT_LENGTH} characters.` },
         { status: 400 }
       );
     }
@@ -53,6 +92,22 @@ export async function POST(request: Request) {
     const normalizedTags = rawTags
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
       .filter((tag) => tag.length > 0);
+
+    if (normalizedTags.length > MAX_TAGS_COUNT) {
+        return NextResponse.json(
+            { message: `Too many tags. Maximum is ${MAX_TAGS_COUNT}.` },
+            { status: 400 }
+        );
+    }
+
+    for (const tag of normalizedTags) {
+        if (tag.length > MAX_TAG_LENGTH) {
+            return NextResponse.json(
+                { message: `Tag '${tag}' exceeds maximum length of ${MAX_TAG_LENGTH} characters.` },
+                { status: 400 }
+            );
+        }
+    }
 
     const { data, error } = await supabaseAdmin
       .from('prompts')
@@ -67,14 +122,16 @@ export async function POST(request: Request) {
       .single();
 
     if (error) {
+      console.error('Error creating prompt:', error);
       return NextResponse.json(
-        { message: 'Error creating prompt', error: error.message },
+        { message: 'Error creating prompt' },
         { status: 500 }
       );
     }
 
     return NextResponse.json({ message: 'Prompt added successfully!', id: data.id });
   } catch (error) {
+    console.error('Internal server error in POST /api/prompts:', error);
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
