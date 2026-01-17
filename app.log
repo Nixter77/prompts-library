@@ -1,0 +1,35 @@
+
+> prompts-library@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 1933ms
+ ○ Compiling /add-prompt ...
+ ✓ Compiled /add-prompt in 9.7s (674 modules)
+ GET /add-prompt 200 in 11079ms
+ ✓ Compiled in 267ms (260 modules)
+ GET /add-prompt 200 in 61ms
+ ○ Compiling /prompts/[id] ...
+ ✓ Compiled /prompts/[id] in 858ms (700 modules)
+ ✓ Compiled in 127ms (263 modules)
+ GET /add-prompt 200 in 295ms
+ ✓ Compiled in 181ms (263 modules)
+ GET /add-prompt 200 in 47ms
+ GET /prompts/123 200 in 86ms
+ ✓ Compiled in 115ms (263 modules)
+ GET /add-prompt 200 in 86ms
+ ✓ Compiled in 106ms (263 modules)
+ GET /add-prompt 200 in 54ms
+ GET /prompts/123 200 in 76ms
+ ✓ Compiled in 137ms (263 modules)
+ GET /prompts/123 200 in 123ms
+ ✓ Compiled in 191ms (263 modules)
+ GET /add-prompt 200 in 129ms
+ ✓ Compiled in 155ms (263 modules)
+ GET /add-prompt 200 in 52ms
+ ✓ Compiled in 106ms (263 modules)
+ ✓ Compiled in 224ms (263 modules)
