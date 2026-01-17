@@ -49,6 +49,26 @@ export async function POST(request: Request) {
       );
     }
 
+    // Security: Input validation to prevent DoS and database spam
+    if (title.length > 200) {
+      return NextResponse.json({ message: 'Title must be 200 characters or less.' }, { status: 400 });
+    }
+    if (description && description.length > 1000) {
+      return NextResponse.json({ message: 'Description must be 1000 characters or less.' }, { status: 400 });
+    }
+    if (category.length > 100) {
+      return NextResponse.json({ message: 'Category must be 100 characters or less.' }, { status: 400 });
+    }
+    if (promptText.length > 10000) {
+      return NextResponse.json({ message: 'Prompt text must be 10000 characters or less.' }, { status: 400 });
+    }
+    if (rawTags.length > 20) {
+      return NextResponse.json({ message: 'Cannot have more than 20 tags.' }, { status: 400 });
+    }
+    if (rawTags.some((tag: unknown) => typeof tag === 'string' && tag.length > 50)) {
+      return NextResponse.json({ message: 'Tags must be 50 characters or less.' }, { status: 400 });
+    }
+
     const normalizedCategory = slugifyCategory(category);
     const normalizedTags = rawTags
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))
