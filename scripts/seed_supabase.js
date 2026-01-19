@@ -2,18 +2,18 @@
 const { createClient } = require('@supabase/supabase-js');
 const fs = require('fs');
 const path = require('path');
+const dotenv = require('dotenv');
 
-// Load environment variables (if running locally without dotenv, ensure they are set)
-// Note: In Next.js, vars are usually in .env.local but this script is standalone.
-// We assume the user runs this with env vars loaded or we can try to load them.
-// Since we don't want to depend on 'dotenv' package if not present, we'll check process.env first.
+// Try to load from .env.local first, then .env
+dotenv.config({ path: '.env.local' });
+dotenv.config({ path: '.env' });
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
   console.error('Error: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set.');
-  console.log('Usage: NEXT_PUBLIC_SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/seed_supabase.js');
+  console.error('Make sure you have a .env.local file with these variables.');
   process.exit(1);
 }
 
@@ -32,6 +32,8 @@ function slugifyCategory(value) {
 
 async function seed() {
   console.log(`Starting seed of ${prompts.length} prompts...`);
+  console.log(`Target Supabase URL: ${supabaseUrl}`);
+
   let successCount = 0;
   let errorCount = 0;
 
