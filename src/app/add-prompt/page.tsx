@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useRouter } from 'next/navigation';
 import { slugifyCategory } from '@/lib/utils';
+import { AlertCircle, Loader2 } from 'lucide-react';
 
 const AddPromptPage = () => {
   const [title, setTitle] = useState('');
@@ -13,10 +14,14 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    setError(null);
 
     try {
       const normalizedCategory = slugifyCategory(category);
@@ -45,48 +50,99 @@ const AddPromptPage = () => {
       }
 
       const data = await res.json();
-      alert('Prompt added successfully!');
       router.push(`/prompts/${data.id}`);
     } catch (error) {
       console.error('Error adding prompt:', error);
-      alert(`Error adding prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setError(error instanceof Error ? error.message : 'Unknown error occurred');
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
-        <Input
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <Input
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="Prompt text"
-          value={promptText}
-          onChange={(e) => setPromptText(e.target.value)}
-          required
-          rows={10}
-        />
-        <Input
-          placeholder="Tags (comma-separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
-        <Button type="submit">Add prompt</Button>
+      <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-6">
+        {error && (
+          <div className="p-4 bg-red-50 text-red-700 rounded-md flex items-center gap-2">
+            <AlertCircle className="h-5 w-5" />
+            <p>{error}</p>
+          </div>
+        )}
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="title" className="text-sm font-medium">
+            Title <span className="text-red-500">*</span>
+          </label>
+          <Input
+            id="title"
+            placeholder="e.g. Creative Writing Helper"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+            maxLength={200}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="description" className="text-sm font-medium">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            placeholder="What is this prompt for?"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            maxLength={1000}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="category" className="text-sm font-medium">
+            Category <span className="text-red-500">*</span>
+          </label>
+          <Input
+            id="category"
+            placeholder="e.g. Writing"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+            maxLength={100}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="promptText" className="text-sm font-medium">
+            Prompt Text <span className="text-red-500">*</span>
+          </label>
+          <Textarea
+            id="promptText"
+            placeholder="Enter the full prompt text here..."
+            value={promptText}
+            onChange={(e) => setPromptText(e.target.value)}
+            required
+            rows={10}
+            maxLength={10000}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="tags" className="text-sm font-medium">
+            Tags
+          </label>
+          <Input
+            id="tags"
+            placeholder="comma, separated, tags"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
+          <p className="text-xs text-muted-foreground">Separate tags with commas</p>
+        </div>
+
+        <Button type="submit" disabled={isLoading}>
+          {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {isLoading ? 'Adding Prompt...' : 'Add Prompt'}
+        </Button>
       </form>
     </div>
   );
