@@ -1,0 +1,352 @@
+[
+  {
+    "title": "Explain Complex Code",
+    "description": "Explains a complex snippet of code in simple terms.",
+    "category": "programming",
+    "prompt_text": "Please explain the following code snippet in simple terms, breaking down what each part does and how they work together: [INSERT CODE HERE]",
+    "tags": ["coding", "explanation", "learning"]
+  },
+  {
+    "title": "Debug Python Script",
+    "description": "Identifies and fixes errors in a Python script.",
+    "category": "programming",
+    "prompt_text": "I have a Python script that is throwing an error. Please analyze the code, identify the bug, and provide a corrected version with an explanation of the fix: [INSERT CODE HERE]",
+    "tags": ["python", "debugging", "fix"]
+  },
+  {
+    "title": "Generate React Component",
+    "description": "Creates a functional React component with specified props.",
+    "category": "programming",
+    "prompt_text": "Create a functional React component named [COMPONENT NAME] that accepts the following props: [LIST PROPS]. The component should [DESCRIBE FUNCTIONALITY]. use Tailwind CSS for styling.",
+    "tags": ["react", "frontend", "component"]
+  },
+  {
+    "title": "SQL Query Optimization",
+    "description": "Optimizes a slow SQL query for better performance.",
+    "category": "data-analysis",
+    "prompt_text": "Here is a SQL query that is running slowly on a large dataset: [INSERT QUERY]. Please suggest optimizations or rewrite the query to improve performance, explaining your changes.",
+    "tags": ["sql", "database", "optimization"]
+  },
+  {
+    "title": "Pandas Data Cleaning",
+    "description": "Script to clean and preprocess a dataset using Pandas.",
+    "category": "data-analysis",
+    "prompt_text": "I have a dataset loaded into a Pandas DataFrame. Write a Python script to perform the following cleaning tasks: handle missing values in [COLUMN], convert [COLUMN] to datetime, and remove duplicates based on [COLUMN].",
+    "tags": ["python", "pandas", "data-cleaning"]
+  },
+  {
+    "title": "Midjourney Portrait Prompt",
+    "description": "Detailed prompt for a realistic portrait in Midjourney.",
+    "category": "images",
+    "prompt_text": "Create a detailed prompt for Midjourney to generate a hyper-realistic portrait of [SUBJECT]. Include details about lighting (e.g., cinematic, softbox), camera settings (e.g., 85mm, f/1.8), and style (e.g., highly detailed, 8k).",
+    "tags": ["midjourney", "portrait", "realistic"]
+  },
+  {
+    "title": "Blog Post Outline",
+    "description": "Generates a structured outline for a blog post.",
+    "category": "writing",
+    "prompt_text": "Create a detailed outline for a blog post titled \"[TITLE]\". The post should target [AUDIENCE] and cover the following key points: [POINT 1], [POINT 2], [POINT 3]. Include a catchy introduction and a strong conclusion.",
+    "tags": ["blogging", "content-creation", "outline"]
+  },
+  {
+    "title": "Professional Email Rewrite",
+    "description": "Rewrites an email to be more professional and concise.",
+    "category": "writing",
+    "prompt_text": "Rewrite the following email draft to be more professional, concise, and polite. The goal is to [GOAL, e.g., ask for a meeting]: [INSERT DRAFT]",
+    "tags": ["email", "professional", "communication"]
+  },
+  {
+    "title": "Meeting Agenda Generator",
+    "description": "Creates a structured agenda for a business meeting.",
+    "category": "productivity",
+    "prompt_text": "Draft a meeting agenda for a [DURATION] minute meeting about [TOPIC]. The attendees are [ROLES]. Include time slots for introduction, key discussion points, Q&A, and action items.",
+    "tags": ["meeting", "agenda", "business"]
+  },
+  {
+    "title": "SWOT Analysis",
+    "description": "Performs a SWOT analysis for a product or company.",
+    "category": "business",
+    "prompt_text": "Conduct a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for [COMPANY/PRODUCT]. Focus on [SPECIFIC ASPECT, e.g., market position, technology].",
+    "tags": ["strategy", "analysis", "business"]
+  },
+  {
+    "title": "Regex Generator",
+    "description": "Generates a regular expression for a specific pattern.",
+    "category": "programming",
+    "prompt_text": "Write a regular expression (Regex) that matches [PATTERN DESCRIPTION, e.g., email addresses, phone numbers in format X]. Explain how the regex works.",
+    "tags": ["regex", "coding", "pattern-matching"]
+  },
+  {
+    "title": "Unit Test Writer",
+    "description": "Writes unit tests for a given function using Jest.",
+    "category": "programming",
+    "prompt_text": "Write comprehensive unit tests for the following JavaScript function using Jest. Include test cases for valid inputs, invalid inputs, and edge cases: [INSERT CODE]",
+    "tags": ["testing", "jest", "javascript"]
+  },
+  {
+    "title": "Excel Formula Helper",
+    "description": "Creates a complex Excel formula for a specific task.",
+    "category": "data-analysis",
+    "prompt_text": "I need an Excel formula that [DESCRIBE TASK, e.g., sums column A if column B contains 'X' and column C is greater than 10]. Explain how the formula works.",
+    "tags": ["excel", "spreadsheet", "formula"]
+  },
+  {
+    "title": "Social Media Caption",
+    "description": "Generates engaging captions for social media posts.",
+    "category": "marketing",
+    "prompt_text": "Write 3 engaging Instagram captions for a photo of [DESCRIPTION OF IMAGE]. The tone should be [TONE, e.g., fun, inspirational]. Include relevant hashtags.",
+    "tags": ["social-media", "instagram", "copywriting"]
+  },
+  {
+    "title": "Product Description",
+    "description": "Writes a compelling product description for e-commerce.",
+    "category": "marketing",
+    "prompt_text": "Write a compelling product description for [PRODUCT NAME]. Highlight its key features: [FEATURE 1], [FEATURE 2]. The target audience is [AUDIENCE].",
+    "tags": ["e-commerce", "copywriting", "sales"]
+  },
+  {
+    "title": "Study Plan Creator",
+    "description": "Creates a structured study plan for learning a new skill.",
+    "category": "learning",
+    "prompt_text": "Create a 4-week study plan to learn [SKILL/TOPIC]. I can dedicate [HOURS] hours per week. Break it down by week with specific topics and resources/exercises.",
+    "tags": ["education", "planning", "self-improvement"]
+  },
+  {
+    "title": "Language Translation",
+    "description": "Translates text while preserving tone and context.",
+    "category": "writing",
+    "prompt_text": "Translate the following text from [SOURCE LANGUAGE] to [TARGET LANGUAGE]. Ensure the tone remains [TONE] and the meaning is preserved: [INSERT TEXT]",
+    "tags": ["translation", "language", "localization"]
+  },
+  {
+    "title": "Git Commit Message",
+    "description": "Generates a clear and descriptive Git commit message.",
+    "category": "programming",
+    "prompt_text": "Write a clear and concise Git commit message for the following changes: [DESCRIBE CHANGES]. Follow conventional commits format if possible.",
+    "tags": ["git", "version-control", "best-practices"]
+  },
+  {
+    "title": "Logo Design Brief",
+    "description": "Creates a design brief for a logo.",
+    "category": "images",
+    "prompt_text": "Write a design brief for a logo for a company named [NAME]. They are in the [INDUSTRY] industry. The logo should convey [VALUES/ATTRIBUTES]. Preferred colors are [COLORS].",
+    "tags": ["design", "branding", "brief"]
+  },
+  {
+    "title": "API Documentation",
+    "description": "Generates documentation for an API endpoint.",
+    "category": "programming",
+    "prompt_text": "Write documentation for the following API endpoint: [METHOD] [URL]. It accepts [PARAMETERS] and returns [RESPONSE STRUCTURE]. Include example requests and responses.",
+    "tags": ["api", "documentation", "technical-writing"]
+  },
+  {
+    "title": "Video Script",
+    "description": "Writes a script for a short YouTube video.",
+    "category": "writing",
+    "prompt_text": "Write a script for a 5-minute YouTube video about [TOPIC]. The video should be informative and entertaining. Include an intro, 3 main points, and a call to action.",
+    "tags": ["video", "youtube", "scriptwriting"]
+  },
+  {
+    "title": "Job Description",
+    "description": "Drafts a job description for a specific role.",
+    "category": "business",
+    "prompt_text": "Draft a job description for a [JOB TITLE] at a [COMPANY TYPE]. Key responsibilities include [RESPONSIBILITIES]. Required skills are [SKILLS].",
+    "tags": ["hiring", "hr", "job-posting"]
+  },
+  {
+    "title": "Newsletter Intro",
+    "description": "Writes a catchy introduction for an email newsletter.",
+    "category": "marketing",
+    "prompt_text": "Write a catchy introduction for a weekly newsletter about [TOPIC]. The theme of this week's issue is [THEME]. Hook the reader to keep reading.",
+    "tags": ["newsletter", "email-marketing", "copywriting"]
+  },
+  {
+    "title": "Data Visualization Idea",
+    "description": "Suggests visualization types for specific data.",
+    "category": "data-analysis",
+    "prompt_text": "I have data regarding [DATA DESCRIPTION, e.g., sales over time by region]. What are the best ways to visualize this data to highlight [INSIGHT NEEDED]? Explain why.",
+    "tags": ["visualization", "charts", "data-storytelling"]
+  },
+  {
+    "title": "Code Review Checklist",
+    "description": "Generates a checklist for code reviews.",
+    "category": "programming",
+    "prompt_text": "Create a checklist for reviewing code in a [LANGUAGE/FRAMEWORK] project. Include checks for performance, security, readability, and adherence to best practices.",
+    "tags": ["code-review", "quality-assurance", "best-practices"]
+  },
+  {
+    "title": "Book Summary",
+    "description": "Summarizes the key takeaways from a book.",
+    "category": "learning",
+    "prompt_text": "Provide a summary of the book \"[BOOK TITLE]\" by [AUTHOR]. Highlight the top 5 key takeaways and how they can be applied in real life.",
+    "tags": ["reading", "summary", "learning"]
+  },
+  {
+    "title": "Interview Questions",
+    "description": "Generates interview questions for a candidate.",
+    "category": "business",
+    "prompt_text": "Generate 10 interview questions for a [JOB ROLE] candidate. Include a mix of technical, behavioral, and situational questions.",
+    "tags": ["hiring", "interviewing", "hr"]
+  },
+  {
+    "title": "SEO Keywords",
+    "description": "Generates SEO keywords for a specific topic.",
+    "category": "marketing",
+    "prompt_text": "Generate a list of 20 high-potential SEO keywords for a website about [TOPIC]. Include long-tail keywords and questions users might search for.",
+    "tags": ["seo", "marketing", "keywords"]
+  },
+  {
+    "title": "Error Handling Strategy",
+    "description": "Suggests an error handling strategy for an app.",
+    "category": "programming",
+    "prompt_text": "Propose a robust error handling strategy for a [TYPE OF APP, e.g., Node.js API]. Cover how to log errors, what to return to the client, and how to handle critical failures.",
+    "tags": ["architecture", "error-handling", "best-practices"]
+  },
+  {
+    "title": "Recipe Generator",
+    "description": "Generates a recipe based on available ingredients.",
+    "category": "productivity",
+    "prompt_text": "I have the following ingredients: [LIST INGREDIENTS]. Suggest a delicious recipe I can make. Include step-by-step cooking instructions.",
+    "tags": ["cooking", "food", "lifestyle"]
+  },
+  {
+    "title": "React Custom Hook",
+    "description": "Creates a custom React hook for specific logic.",
+    "category": "programming",
+    "prompt_text": "Create a custom React hook named [HOOK NAME] that handles [FUNCTIONALITY, e.g., fetching data with cache]. It should return [RETURN VALUES].",
+    "tags": ["react", "hooks", "frontend"]
+  },
+  {
+    "title": "SQL Schema Design",
+    "description": "Designs a database schema for an application.",
+    "category": "data-analysis",
+    "prompt_text": "Design a relational database schema for a [APP TYPE, e.g., library management system]. List the tables, columns, primary keys, and foreign key relationships.",
+    "tags": ["database", "schema-design", "sql"]
+  },
+  {
+    "title": "Landing Page Copy",
+    "description": "Writes copy for a landing page.",
+    "category": "marketing",
+    "prompt_text": "Write the copy for a landing page promoting [PRODUCT/SERVICE]. Include a headline, subheadline, benefits section, social proof, and a call to action.",
+    "tags": ["copywriting", "landing-page", "marketing"]
+  },
+  {
+    "title": "Typescript Interface",
+    "description": "Generates TypeScript interfaces for data structures.",
+    "category": "programming",
+    "prompt_text": "Generate TypeScript interfaces for the following JSON data: [INSERT JSON]. Ensure proper typing for nested objects and arrays.",
+    "tags": ["typescript", "types", "frontend"]
+  },
+  {
+    "title": "Project Timeline",
+    "description": "Creates a timeline for a project.",
+    "category": "productivity",
+    "prompt_text": "Create a project timeline for [PROJECT NAME]. The project starts on [START DATE] and ends on [END DATE]. Key milestones include [MILESTONES].",
+    "tags": ["project-management", "planning", "scheduling"]
+  },
+  {
+    "title": "Midjourney Architecture",
+    "description": "Prompt for architectural rendering.",
+    "category": "images",
+    "prompt_text": "Create a Midjourney prompt for a modern [BUILDING TYPE] designed by [ARCHITECT STYLE]. Use descriptors like 'minimalist', 'sustainable materials', 'natural light', and 'photorealistic'.",
+    "tags": ["midjourney", "architecture", "design"]
+  },
+  {
+    "title": "Python Script Optimization",
+    "description": "Optimizes Python code for speed.",
+    "category": "programming",
+    "prompt_text": "Review the following Python code and suggest changes to improve its execution speed using libraries like NumPy or better algorithms: [INSERT CODE]",
+    "tags": ["python", "optimization", "performance"]
+  },
+  {
+    "title": "Press Release",
+    "description": "Writes a press release for a new announcement.",
+    "category": "marketing",
+    "prompt_text": "Write a press release announcing [NEWS/EVENT]. Include a dateline, headline, body paragraphs with quotes, and contact information.",
+    "tags": ["pr", "writing", "news"]
+  },
+  {
+    "title": "User Story Writer",
+    "description": "Writes user stories for agile development.",
+    "category": "business",
+    "prompt_text": "Write 5 user stories for a [APP FEATURE]. Follow the format: 'As a [USER ROLE], I want to [ACTION], so that [BENEFIT]'. include acceptance criteria.",
+    "tags": ["agile", "product-management", "user-stories"]
+  },
+  {
+    "title": "CSS Grid Layout",
+    "description": "Generates CSS Grid code for a specific layout.",
+    "category": "programming",
+    "prompt_text": "Write the CSS code to create a [LAYOUT TYPE, e.g., 3-column masonry] layout using CSS Grid. The layout should be responsive.",
+    "tags": ["css", "frontend", "layout"]
+  },
+  {
+    "title": "Docker Compose File",
+    "description": "Creates a docker-compose.yml file.",
+    "category": "programming",
+    "prompt_text": "Create a `docker-compose.yml` file for a full-stack application with a Node.js backend, React frontend, and PostgreSQL database. Include volume mapping and environment variables.",
+    "tags": ["docker", "devops", "containerization"]
+  },
+  {
+    "title": "Cold Email Template",
+    "description": "Writes a cold email for sales or networking.",
+    "category": "business",
+    "prompt_text": "Write a cold email to a potential client offering [SERVICE]. Keep it under 150 words. Focus on their pain points and how you can solve them.",
+    "tags": ["sales", "email", "networking"]
+  },
+  {
+    "title": "SVG Icon Generator",
+    "description": "Generates SVG code for an icon.",
+    "category": "images",
+    "prompt_text": "Generate the SVG code for a simple, flat-style icon of a [OBJECT]. Use a [COLOR] color scheme.",
+    "tags": ["svg", "icon", "design"]
+  },
+  {
+    "title": "Security Audit Checklist",
+    "description": "Checklist for web application security.",
+    "category": "programming",
+    "prompt_text": "Create a security audit checklist for a web application. Cover areas like authentication, authorization, data encryption, XSS/CSRF protection, and dependency management.",
+    "tags": ["security", "audit", "checklist"]
+  },
+  {
+    "title": "Motivational Speech",
+    "description": "Writes a short motivational speech.",
+    "category": "writing",
+    "prompt_text": "Write a short, powerful motivational speech for a team that is facing a difficult deadline. Inspire them to push through and deliver quality work.",
+    "tags": ["speech", "leadership", "motivation"]
+  },
+  {
+    "title": "Linux Command Helper",
+    "description": "Explains or provides Linux commands.",
+    "category": "programming",
+    "prompt_text": "How do I [TASK, e.g., find all files larger than 100MB] in Linux using the command line? Explain the command flags used.",
+    "tags": ["linux", "bash", "cli"]
+  },
+  {
+    "title": "Brand Slogan Generator",
+    "description": "Generates catchy slogans for a brand.",
+    "category": "marketing",
+    "prompt_text": "Brainstorm 10 catchy slogans for a new brand of [PRODUCT]. The brand values are [VALUES]. The tone should be [TONE].",
+    "tags": ["branding", "slogan", "creative"]
+  },
+  {
+    "title": "React Context API",
+    "description": "Example of using React Context for state management.",
+    "category": "programming",
+    "prompt_text": "Show me how to set up a React Context for managing [STATE, e.g., user authentication]. Include the provider component and a custom hook to consume the context.",
+    "tags": ["react", "state-management", "frontend"]
+  },
+  {
+    "title": "Resume Bullet Points",
+    "description": "Improves resume bullet points.",
+    "category": "business",
+    "prompt_text": "Rewrite the following resume bullet points to be more impact-driven, using action verbs and quantifying results where possible: [INSERT BULLET POINTS]",
+    "tags": ["resume", "career", "writing"]
+  },
+  {
+    "title": "Algorithm Explanation",
+    "description": "Explains a computer science algorithm.",
+    "category": "programming",
+    "prompt_text": "Explain the [ALGORITHM, e.g., Dijkstra's algorithm] step-by-step. Use a real-world analogy to make it easier to understand.",
+    "tags": ["algorithms", "cs", "learning"]
+  }
+]
