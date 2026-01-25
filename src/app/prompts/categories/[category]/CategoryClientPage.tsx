@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { Input } from '@/components/ui/input';
-import { Prompt } from '@/lib/types';
+import { PromptListResponse } from '@/lib/types';
 
 interface CategoryClientPageProps {
-  prompts: Prompt[];
+  prompts: PromptListResponse[];
   categorySlug: string;
   categoryLabel: string;
 }

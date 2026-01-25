@@ -6,3 +6,5 @@ export interface Prompt {
   prompt_text: string;
   tags: string | null;
 }
+
+export type PromptListResponse = Pick<Prompt, 'id' | 'title' | 'description' | 'category'>;
