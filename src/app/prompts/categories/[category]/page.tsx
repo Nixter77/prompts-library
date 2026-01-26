@@ -1,6 +1,6 @@
 import CategoryClientPage from './CategoryClientPage';
 import { supabaseAdmin } from '@/lib/supabase';
-import { Prompt } from '@/lib/types';
+import { PromptListItem } from '@/lib/types';
 import { formatCategoryLabel, slugifyCategory } from '@/lib/utils';
 import { cookies } from 'next/headers';
 import { translations, Language } from '@/lib/translations';
@@ -15,11 +15,11 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
 
   const { data: allPrompts } = await supabaseAdmin
     .from('prompts')
-    .select('*');
+    .select('id, title, description, category');
 
   const prompts = (allPrompts || [])
     .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+    .map((prompt) => ({ ...prompt, category: categorySlug })) as PromptListItem[];
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
