@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useRouter } from 'next/navigation';
+import { Loader2 } from 'lucide-react';
 import { slugifyCategory } from '@/lib/utils';
 
 const AddPromptPage = () => {
@@ -13,10 +14,12 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       const normalizedCategory = slugifyCategory(category);
@@ -50,6 +53,7 @@ const AddPromptPage = () => {
     } catch (error) {
       console.error('Error adding prompt:', error);
       alert(`Error adding prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
+      setIsSubmitting(false);
     }
   };
 
@@ -62,17 +66,20 @@ const AddPromptPage = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
+          disabled={isSubmitting}
         />
         <Textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          disabled={isSubmitting}
         />
         <Input
           placeholder="Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
           required
+          disabled={isSubmitting}
         />
         <Textarea
           placeholder="Prompt text"
@@ -80,13 +87,17 @@ const AddPromptPage = () => {
           onChange={(e) => setPromptText(e.target.value)}
           required
           rows={10}
+          disabled={isSubmitting}
         />
         <Input
           placeholder="Tags (comma-separated)"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
+          disabled={isSubmitting}
         />
-        <Button type="submit">Add prompt</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? <Loader2 className="animate-spin" /> : 'Add prompt'}
+        </Button>
       </form>
     </div>
   );
