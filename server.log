@@ -1,0 +1,17 @@
+
+> prompts-library@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling /add-prompt ...
+ ✓ Compiled /add-prompt in 10.1s (674 modules)
+ GET /add-prompt 200 in 11748ms
+ ✓ Compiled in 212ms (260 modules)
+ GET /add-prompt 200 in 161ms
+ ✓ Compiled in 186ms (260 modules)
+[?25h
