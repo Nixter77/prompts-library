@@ -22,7 +22,7 @@ export async function GET() {
     }));
 
     return NextResponse.json(normalizedPrompts);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ message: 'Prompt added successfully!', id: data.id });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
