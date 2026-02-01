@@ -56,36 +56,71 @@ const AddPromptPage = () => {
   return (
     <div className="flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
-      <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
-        <Input
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <Input
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="Prompt text"
-          value={promptText}
-          onChange={(e) => setPromptText(e.target.value)}
-          required
-          rows={10}
-        />
-        <Input
-          placeholder="Tags (comma-separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
+      <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-6">
+        <div className="flex flex-col gap-2">
+          <label htmlFor="title" className="text-sm font-medium">
+            Title <span className="text-red-500">*</span>
+          </label>
+          <Input
+            id="title"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="description" className="text-sm font-medium">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="category" className="text-sm font-medium">
+            Category <span className="text-red-500">*</span>
+          </label>
+          <Input
+            id="category"
+            placeholder="Category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="prompt_text" className="text-sm font-medium">
+            Prompt text <span className="text-red-500">*</span>
+          </label>
+          <Textarea
+            id="prompt_text"
+            placeholder="Prompt text"
+            value={promptText}
+            onChange={(e) => setPromptText(e.target.value)}
+            required
+            rows={10}
+          />
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <label htmlFor="tags" className="text-sm font-medium">
+            Tags (comma-separated)
+          </label>
+          <Input
+            id="tags"
+            placeholder="Tags (comma-separated)"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
+        </div>
+
         <Button type="submit">Add prompt</Button>
       </form>
     </div>
