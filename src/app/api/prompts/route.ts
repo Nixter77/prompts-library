@@ -49,6 +49,20 @@ export async function POST(request: Request) {
       );
     }
 
+    // Check for duplicates
+    const { data: existingPrompt } = await supabaseAdmin
+      .from('prompts')
+      .select('id')
+      .eq('prompt_text', promptText)
+      .single();
+
+    if (existingPrompt) {
+      return NextResponse.json(
+        { message: 'This prompt already exists.' },
+        { status: 409 }
+      );
+    }
+
     const normalizedCategory = slugifyCategory(category);
     const normalizedTags = rawTags
       .map((tag) => (typeof tag === 'string' ? tag.trim() : ''))

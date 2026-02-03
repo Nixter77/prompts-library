@@ -4,9 +4,11 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Prompt } from '@/lib/types';
+import { useRouter } from 'next/navigation';
 
 const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const [copied, setCopied] = useState(false);
+  const router = useRouter();
 
   const handleCopy = async () => {
     if (!prompt) return;
@@ -41,6 +43,26 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
     }
   };
 
+  const handleDelete = async () => {
+    if (!confirm('Are you sure you want to delete this prompt?')) return;
+
+    try {
+      const res = await fetch(`/api/prompts/${prompt.id}`, {
+        method: 'DELETE',
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to delete prompt');
+      }
+
+      alert('Prompt deleted successfully');
+      router.push('/');
+    } catch (error) {
+      console.error('Error deleting prompt:', error);
+      alert('Error deleting prompt');
+    }
+  };
+
   if (!prompt) {
     return <div>Loading...</div>;
   }
@@ -53,9 +75,14 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
         <div className="bg-gray-100 p-4 rounded-md mb-8">
           <pre className="whitespace-pre-wrap break-words">{prompt.prompt_text}</pre>
         </div>
-        <Button onClick={handleCopy} className="mb-8">
-          {copied ? 'Copied!' : 'Copy to clipboard'}
-        </Button>
+        <div className="flex gap-4 mb-8">
+          <Button onClick={handleCopy}>
+            {copied ? 'Copied!' : 'Copy to clipboard'}
+          </Button>
+          <Button variant="destructive" onClick={handleDelete}>
+            Delete Prompt
+          </Button>
+        </div>
         <div className="flex gap-2">
           {prompt.tags && Array.isArray(prompt.tags) && prompt.tags.map((tag: string) => (
             <Badge key={tag}>{tag}</Badge>
