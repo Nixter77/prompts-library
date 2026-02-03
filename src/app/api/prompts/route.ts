@@ -49,16 +49,32 @@ export async function POST(request: Request) {
       );
     }
 
-    // Check for duplicates
-    const { data: existingPrompt } = await supabaseAdmin
+    // Check for duplicates - Title
+    const { data: existingTitle } = await supabaseAdmin
+      .from('prompts')
+      .select('id')
+      .eq('title', title)
+      .limit(1)
+      .maybeSingle();
+
+    if (existingTitle) {
+      return NextResponse.json(
+        { message: 'A prompt with this title already exists.' },
+        { status: 409 }
+      );
+    }
+
+    // Check for duplicates - Content
+    const { data: existingContent } = await supabaseAdmin
       .from('prompts')
       .select('id')
       .eq('prompt_text', promptText)
-      .single();
+      .limit(1)
+      .maybeSingle();
 
-    if (existingPrompt) {
+    if (existingContent) {
       return NextResponse.json(
-        { message: 'This prompt already exists.' },
+        { message: 'A prompt with this content already exists.' },
         { status: 409 }
       );
     }

@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 
 const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const [copied, setCopied] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const router = useRouter();
 
   const handleCopy = async () => {
@@ -46,6 +47,8 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this prompt?')) return;
 
+    setIsDeleting(true);
+
     try {
       const res = await fetch(`/api/prompts/${prompt.id}`, {
         method: 'DELETE',
@@ -55,11 +58,11 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
         throw new Error('Failed to delete prompt');
       }
 
-      alert('Prompt deleted successfully');
       router.push('/');
     } catch (error) {
       console.error('Error deleting prompt:', error);
       alert('Error deleting prompt');
+      setIsDeleting(false);
     }
   };
 
@@ -79,8 +82,8 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
           <Button onClick={handleCopy}>
             {copied ? 'Copied!' : 'Copy to clipboard'}
           </Button>
-          <Button variant="destructive" onClick={handleDelete}>
-            Delete Prompt
+          <Button variant="destructive" onClick={handleDelete} disabled={isDeleting}>
+            {isDeleting ? 'Deleting...' : 'Delete Prompt'}
           </Button>
         </div>
         <div className="flex gap-2">
