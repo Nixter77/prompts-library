@@ -20,7 +20,7 @@ export async function GET(_request: NextRequest, context: { params: Promise<{ id
     }
 
     return NextResponse.json(prompt);
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { message: 'Internal server error' },
       { status: 500 }
@@ -28,28 +28,7 @@ export async function GET(_request: NextRequest, context: { params: Promise<{ id
   }
 }
 
-export async function DELETE(_request: NextRequest, context: { params: Promise<{ id: string }> }) {
-  const { id } = await context.params;
-
-  if (!id) {
-    return NextResponse.json({ message: 'Prompt id is required.' }, { status: 400 });
-  }
-
-  try {
-    const { error } = await supabaseAdmin
-      .from('prompts')
-      .delete()
-      .eq('id', id);
-
-    if (error) {
-      return NextResponse.json({ message: 'Error deleting prompt.' }, { status: 500 });
-    }
-
-    return NextResponse.json({ message: 'Prompt deleted successfully!' });
-  } catch (error) {
-    return NextResponse.json(
-      { message: 'Internal server error' },
-      { status: 500 }
-    );
-  }
+// 🛡️ Sentinel: Disabled DELETE endpoint to prevent unauthenticated deletion of data.
+export async function DELETE() {
+  return NextResponse.json({ message: 'Method not allowed' }, { status: 405 });
 }
