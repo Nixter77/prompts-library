@@ -13,13 +13,18 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   const lang = (cookieStore.get('NEXT_LOCALE')?.value as Language) || 'en';
   const t = translations[lang] || translations['en'];
 
+  // Optimization: Select only necessary columns to reduce payload size.
+  // We explicitly exclude 'prompt_text' which can be very large.
   const { data: allPrompts } = await supabaseAdmin
     .from('prompts')
-    .select('*');
+    .select('id, title, description, category');
 
   const prompts = (allPrompts || [])
     .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+    .map((prompt) => ({ ...prompt, category: categorySlug })) as Pick<
+    Prompt,
+    'id' | 'title' | 'description' | 'category'
+  >[];
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
