@@ -4,12 +4,9 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Prompt } from '@/lib/types';
-import { useRouter } from 'next/navigation';
 
 const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const [copied, setCopied] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const router = useRouter();
 
   const handleCopy = async () => {
     if (!prompt) return;
@@ -38,31 +35,8 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
       // в консоль — для диагностики
-      // eslint-disable-next-line no-console
       console.error('Copy failed', err);
       // ничего не делаем дальше; можно показать уведомление в будущем
-    }
-  };
-
-  const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this prompt?')) return;
-
-    setIsDeleting(true);
-
-    try {
-      const res = await fetch(`/api/prompts/${prompt.id}`, {
-        method: 'DELETE',
-      });
-
-      if (!res.ok) {
-        throw new Error('Failed to delete prompt');
-      }
-
-      router.push('/');
-    } catch (error) {
-      console.error('Error deleting prompt:', error);
-      alert('Error deleting prompt');
-      setIsDeleting(false);
     }
   };
 
@@ -81,9 +55,6 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
         <div className="flex gap-4 mb-8">
           <Button onClick={handleCopy}>
             {copied ? 'Copied!' : 'Copy to clipboard'}
-          </Button>
-          <Button variant="destructive" onClick={handleDelete} disabled={isDeleting}>
-            {isDeleting ? 'Deleting...' : 'Delete Prompt'}
           </Button>
         </div>
         <div className="flex gap-2">
