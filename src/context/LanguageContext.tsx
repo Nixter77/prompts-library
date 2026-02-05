@@ -28,18 +28,6 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`; // 1 year
-    // Force a router refresh might be needed for server components to update,
-    // but usually a state change is enough for client components.
-    // For Server Components to pick up the cookie, we might need to reload.
-    // Let's reload if the language changes to ensure Server Components re-render with the new cookie.
-    // However, reloading is jarring.
-    // Ideally, we just use Client Components for text or `router.refresh()`
-    // We will use window.location.reload() for simplicity to ensure server components update
-    // since we plan to use cookies in server components.
-    // OPTIMIZATION: Check if the language actually changed before reloading.
-    if (lang !== language) {
-        window.location.reload();
-    }
   };
 
   const t = (key: TranslationKey): string => {

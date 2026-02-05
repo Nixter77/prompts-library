@@ -13,10 +13,37 @@ const AddPromptPage = () => {
   const [category, setCategory] = useState('');
   const [promptText, setPromptText] = useState('');
   const [tags, setTags] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const router = useRouter();
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!title.trim()) {
+      newErrors.title = 'Title is required';
+    }
+
+    if (!category.trim()) {
+      newErrors.category = 'Category is required';
+    }
+
+    if (!promptText.trim()) {
+      newErrors.promptText = 'Prompt text is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setLoading(true);
 
     try {
       const normalizedCategory = slugifyCategory(category);
@@ -31,10 +58,10 @@ const AddPromptPage = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          title,
-          description,
+          title: title.trim(),
+          description: description.trim() || null,
           category: normalizedCategory,
-          prompt_text: promptText,
+          prompt_text: promptText.trim(),
           tags: tagList,
         }),
       });
@@ -50,6 +77,8 @@ const AddPromptPage = () => {
     } catch (error) {
       console.error('Error adding prompt:', error);
       alert(`Error adding prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -57,36 +86,61 @@ const AddPromptPage = () => {
     <div className="flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
-        <Input
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
+        <div>
+          <Input
+            placeholder="Title"
+            value={title}
+            onChange={(e) => {
+              setTitle(e.target.value);
+              if (errors.title) setErrors(prev => ({...prev, title: ''}));
+            }}
+            required
+          />
+          {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
+        </div>
+
         <Textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <Input
-          placeholder="Category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          required
-        />
-        <Textarea
-          placeholder="Prompt text"
-          value={promptText}
-          onChange={(e) => setPromptText(e.target.value)}
-          required
-          rows={10}
-        />
+
+        <div>
+          <Input
+            placeholder="Category"
+            value={category}
+            onChange={(e) => {
+              setCategory(e.target.value);
+              if (errors.category) setErrors(prev => ({...prev, category: ''}));
+            }}
+            required
+          />
+          {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category}</p>}
+        </div>
+
+        <div>
+          <Textarea
+            placeholder="Prompt text"
+            value={promptText}
+            onChange={(e) => {
+              setPromptText(e.target.value);
+              if (errors.promptText) setErrors(prev => ({...prev, promptText: ''}));
+            }}
+            required
+            rows={10}
+          />
+          {errors.promptText && <p className="text-red-500 text-sm mt-1">{errors.promptText}</p>}
+        </div>
+
         <Input
           placeholder="Tags (comma-separated)"
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
-        <Button type="submit">Add prompt</Button>
+
+        <Button type="submit" disabled={loading}>
+          {loading ? 'Adding...' : 'Add prompt'}
+        </Button>
       </form>
     </div>
   );

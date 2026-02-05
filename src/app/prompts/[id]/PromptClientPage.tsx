@@ -45,23 +45,30 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   };
 
   const handleDelete = async () => {
-    if (!confirm('Are you sure you want to delete this prompt?')) return;
+    if (!confirm('Are you sure you want to delete this prompt? This action cannot be undone.')) return;
 
     setIsDeleting(true);
 
     try {
       const res = await fetch(`/api/prompts/${prompt.id}`, {
         method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          // In a real application, you would include authentication token here
+          // 'Authorization': `Bearer ${authToken}`,
+        },
       });
 
       if (!res.ok) {
-        throw new Error('Failed to delete prompt');
+        const errorData = await res.json();
+        throw new Error(errorData.message || 'Failed to delete prompt');
       }
 
       router.push('/');
+      router.refresh(); // Refresh to update any cached data
     } catch (error) {
       console.error('Error deleting prompt:', error);
-      alert('Error deleting prompt');
+      alert(`Error deleting prompt: ${error instanceof Error ? error.message : 'Unknown error'}`);
       setIsDeleting(false);
     }
   };
@@ -86,7 +93,7 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
             {isDeleting ? 'Deleting...' : 'Delete Prompt'}
           </Button>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {prompt.tags && Array.isArray(prompt.tags) && prompt.tags.map((tag: string) => (
             <Badge key={tag}>{tag}</Badge>
           ))}

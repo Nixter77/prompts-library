@@ -4,5 +4,5 @@ export interface Prompt {
   description?: string | null;
   category: string;
   prompt_text: string;
-  tags: string | null;
+  tags: string[] | null;
 }
