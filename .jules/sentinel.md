@@ -1,0 +1,4 @@
+## 2026-02-05 - Disabled Unauthenticated DELETE Endpoint
+**Vulnerability:** The `DELETE /api/prompts/[id]` endpoint was exposed and utilized `supabaseAdmin` (service role) without any authentication or authorization checks. This allowed any unauthenticated user to delete arbitrary prompts by guessing or knowing their IDs, constituting a Broken Access Control vulnerability.
+**Learning:** Security through obscurity (hiding the UI button) is insufficient. API endpoints must be independently secured. Using `supabaseAdmin` bypasses database-level RLS policies, making application-level checks mandatory.
+**Prevention:** Explicitly disable unused API methods (return 405 Method Not Allowed) rather than leaving them implemented but "hidden". Prefer using the RLS-enabled Supabase client for user-facing endpoints to leverage database security policies.
