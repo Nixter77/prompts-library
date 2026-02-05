@@ -87,31 +87,45 @@ const AddPromptPage = () => {
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
         <div>
+          <label htmlFor="title" className="block text-sm font-medium mb-1">
+            Title <span className="text-red-500">*</span>
+          </label>
           <Input
-            placeholder="Title"
+            id="title"
+            placeholder="Enter the prompt title"
             value={title}
             onChange={(e) => {
               setTitle(e.target.value);
-              if (errors.title) setErrors(prev => ({...prev, title: ''}));
+              if (errors.title) setErrors(prev => ({ ...prev, title: '' }));
             }}
             required
           />
           {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
 
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <div>
+          <label htmlFor="description" className="block text-sm font-medium mb-1">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            placeholder="Brief description of what this prompt does"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
 
         <div>
+          <label htmlFor="category" className="block text-sm font-medium mb-1">
+            Category <span className="text-red-500">*</span>
+          </label>
           <Input
-            placeholder="Category"
+            id="category"
+            placeholder="e.g., Coding, Writing, Art"
             value={category}
             onChange={(e) => {
               setCategory(e.target.value);
-              if (errors.category) setErrors(prev => ({...prev, category: ''}));
+              if (errors.category) setErrors(prev => ({ ...prev, category: '' }));
             }}
             required
           />
@@ -119,12 +133,16 @@ const AddPromptPage = () => {
         </div>
 
         <div>
+          <label htmlFor="promptText" className="block text-sm font-medium mb-1">
+            Prompt Text <span className="text-red-500">*</span>
+          </label>
           <Textarea
-            placeholder="Prompt text"
+            id="promptText"
+            placeholder="The full text of the prompt"
             value={promptText}
             onChange={(e) => {
               setPromptText(e.target.value);
-              if (errors.promptText) setErrors(prev => ({...prev, promptText: ''}));
+              if (errors.promptText) setErrors(prev => ({ ...prev, promptText: '' }));
             }}
             required
             rows={10}
@@ -132,11 +150,17 @@ const AddPromptPage = () => {
           {errors.promptText && <p className="text-red-500 text-sm mt-1">{errors.promptText}</p>}
         </div>
 
-        <Input
-          placeholder="Tags (comma-separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
+        <div>
+          <label htmlFor="tags" className="block text-sm font-medium mb-1">
+            Tags
+          </label>
+          <Input
+            id="tags"
+            placeholder="e.g., javascript, creative, story (comma-separated)"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
+        </div>
 
         <Button type="submit" disabled={loading}>
           {loading ? 'Adding...' : 'Add prompt'}
