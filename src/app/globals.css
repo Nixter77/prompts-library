@@ -177,7 +177,13 @@ html.scribblified [class*="rounded-"] {
   border: 2px solid var(--border) !important;
   box-shadow: 4px 4px 0px 0px var(--border) !important;
   transition: all 0.1s ease !important;
-  background-color: var(--background);
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+}
+
+html.scribblified button:hover {
+  background-color: var(--border) !important;
+  color: var(--background) !important;
 }
 
 html.scribblified button:active,
