@@ -121,7 +121,7 @@
 }
 
 .scribblified {
-  --background: oklch(0.98 0.01 80); /* sketchbook off-white paper */
+  --background: oklch(1 0 0); /* pure white paper */
   --foreground: oklch(0.15 0.05 260); /* dark ink blue/black */
   --card: oklch(0.96 0.02 85); /* slightly yellower paper */
   --card-foreground: oklch(0.15 0.05 260);
@@ -151,22 +151,17 @@
 }
 
 /* Force Scribblified Styles globally when active */
+html.scribblified {
+  font-size: 22px !important; /* Base size +6px to compensate for handwriting font scale */
+}
+
 html.scribblified * {
   font-family: 'Caveat', 'Comic Sans MS', cursive !important;
 }
 
 html.scribblified body {
-  /* graph paper lines */
-  background-image: 
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px) !important;
-  background-size: 30px 30px !important;
-  background-position: -1px -1px !important;
   background-color: var(--background) !important;
-  /* Make the lines very faint */
-  background-image: 
-    linear-gradient(oklch(0.15 0.05 260 / 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(0.15 0.05 260 / 0.08) 1px, transparent 1px) !important;
+  background-image: none !important;
 }
 
 html.scribblified button,
