@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -120,30 +121,24 @@
 }
 
 .scribblified {
-  --background: oklch(0.96 0.03 90); /* warm rough paper */
-  --foreground: oklch(0.25 0.02 260); /* ink pen */
-  --card: oklch(0.94 0.04 85);
-  --card-foreground: oklch(0.2 0.03 260);
-  --popover: oklch(0.95 0.04 85);
-  --popover-foreground: oklch(0.2 0.03 260);
-  --primary: oklch(0.35 0.08 260); /* blue ballpoint pen */
-  --primary-foreground: oklch(0.97 0.02 90);
-  --secondary: oklch(0.9 0.08 85);
-  --secondary-foreground: oklch(0.3 0.08 260);
-  --muted: oklch(0.92 0.05 85);
-  --muted-foreground: oklch(0.45 0.05 260);
-  --accent: oklch(0.85 0.12 85); /* highlighter yellow/orange */
-  --accent-foreground: oklch(0.2 0.05 260);
-  --destructive: oklch(0.5 0.18 25); /* red pen */
-  --border: oklch(0.4 0.05 260); /* distinct ink border */
-  --input: oklch(0.4 0.05 260);
-  --ring: oklch(0.35 0.08 260);
-  
-  --radius: 255px 15px 225px 15px/15px 225px 15px 255px; /* sketch borders */
-  
-  --font-sans-current: var(--font-caveat), cursive;
-  --font-heading-current: var(--font-caveat), cursive;
-  --font-body-current: var(--font-caveat), cursive;
+  --background: oklch(0.98 0.01 80); /* sketchbook off-white paper */
+  --foreground: oklch(0.15 0.05 260); /* dark ink blue/black */
+  --card: oklch(0.96 0.02 85); /* slightly yellower paper */
+  --card-foreground: oklch(0.15 0.05 260);
+  --popover: oklch(0.96 0.02 85);
+  --popover-foreground: oklch(0.15 0.05 260);
+  --primary: oklch(0.15 0.05 260); /* solid ink */
+  --primary-foreground: oklch(0.98 0.01 80);
+  --secondary: oklch(0.9 0.05 85); /* faded ink/marker */
+  --secondary-foreground: oklch(0.15 0.05 260);
+  --muted: oklch(0.94 0.03 85);
+  --muted-foreground: oklch(0.4 0.05 260);
+  --accent: oklch(0.85 0.15 95); /* yellow highlighter */
+  --accent-foreground: oklch(0.15 0.05 260);
+  --destructive: oklch(0.6 0.2 25); /* red marker */
+  --border: oklch(0.15 0.05 260); /* sharp ink border */
+  --input: oklch(0.15 0.05 260);
+  --ring: oklch(0.15 0.05 260);
 }
 
 @layer base {
@@ -151,11 +146,48 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground transition-colors duration-200;
+    @apply bg-background text-foreground transition-all duration-200;
   }
-  
-  .scribblified body {
-    background-image: radial-gradient(oklch(0.8 0.05 260) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
+}
+
+/* Force Scribblified Styles globally when active */
+html.scribblified * {
+  font-family: 'Caveat', 'Comic Sans MS', cursive !important;
+}
+
+html.scribblified body {
+  /* graph paper lines */
+  background-image: 
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px) !important;
+  background-size: 30px 30px !important;
+  background-position: -1px -1px !important;
+  background-color: var(--background) !important;
+  /* Make the lines very faint */
+  background-image: 
+    linear-gradient(oklch(0.15 0.05 260 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.15 0.05 260 / 0.08) 1px, transparent 1px) !important;
+}
+
+html.scribblified button,
+html.scribblified input,
+html.scribblified textarea,
+html.scribblified .card,
+html.scribblified nav,
+html.scribblified [class*="rounded-"] {
+  border-bottom-left-radius: 15px 255px !important;
+  border-bottom-right-radius: 225px 15px !important;
+  border-top-left-radius: 255px 15px !important;
+  border-top-right-radius: 15px 225px !important;
+  border: 2px solid var(--border) !important;
+  box-shadow: 4px 4px 0px 0px var(--border) !important;
+  transition: all 0.1s ease !important;
+  background-color: var(--background);
+}
+
+html.scribblified button:active,
+html.scribblified input:focus,
+html.scribblified textarea:focus {
+  box-shadow: 2px 2px 0px 0px var(--border) !important;
+  transform: translate(2px, 2px) !important;
 }
