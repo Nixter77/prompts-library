@@ -13,13 +13,17 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   const lang = (cookieStore.get('NEXT_LOCALE')?.value as Language) || 'en';
   const t = translations[lang] || translations['en'];
 
-  const { data: allPrompts } = await supabaseAdmin
+  // ⚡ Bolt Optimization: Filter in DB instead of fetching all records
+  // Reduces memory usage and network transfer significantly
+  const { data: promptsData } = await supabaseAdmin
     .from('prompts')
-    .select('*');
+    .select('*')
+    .eq('category', categorySlug);
 
-  const prompts = (allPrompts || [])
-    .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+  const prompts = (promptsData || []).map((prompt) => ({
+    ...prompt,
+    category: categorySlug,
+  })) as Prompt[];
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
