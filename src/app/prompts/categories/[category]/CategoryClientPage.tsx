@@ -6,8 +6,11 @@ import Link from 'next/link';
 import { Input } from '@/components/ui/input';
 import { Prompt } from '@/lib/types';
 
+// Define a type for the subset of Prompt data needed for the list view
+export type PromptListResponse = Pick<Prompt, 'id' | 'title' | 'description' | 'category'>;
+
 interface CategoryClientPageProps {
-  prompts: Prompt[];
+  prompts: PromptListResponse[];
   categorySlug: string;
   categoryLabel: string;
 }

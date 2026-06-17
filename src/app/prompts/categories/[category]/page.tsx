@@ -1,6 +1,5 @@
-import CategoryClientPage from './CategoryClientPage';
+import CategoryClientPage, { PromptListResponse } from './CategoryClientPage';
 import { supabaseAdmin } from '@/lib/supabase';
-import { Prompt } from '@/lib/types';
 import { formatCategoryLabel, slugifyCategory } from '@/lib/utils';
 import { cookies } from 'next/headers';
 import { translations, Language } from '@/lib/translations';
@@ -13,13 +12,12 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   const lang = (cookieStore.get('NEXT_LOCALE')?.value as Language) || 'en';
   const t = translations[lang] || translations['en'];
 
-  const { data: allPrompts } = await supabaseAdmin
+  // Optimized query: Select only necessary fields and filter by category in SQL
+  // This avoids fetching large 'prompt_text' fields and filtering in-memory
+  const { data: prompts } = await supabaseAdmin
     .from('prompts')
-    .select('*');
-
-  const prompts = (allPrompts || [])
-    .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+    .select('id, title, description, category')
+    .eq('category', categorySlug);
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
@@ -28,7 +26,7 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
 
   return (
     <CategoryClientPage
-      prompts={prompts}
+      prompts={(prompts || []) as PromptListResponse[]}
       categorySlug={categorySlug}
       categoryLabel={categoryLabel}
     />
