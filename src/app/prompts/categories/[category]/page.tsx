@@ -13,13 +13,14 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   const lang = (cookieStore.get('NEXT_LOCALE')?.value as Language) || 'en';
   const t = translations[lang] || translations['en'];
 
-  const { data: allPrompts } = await supabaseAdmin
+  // Optimization: Filter by category in DB and fetch only necessary fields.
+  // Note: Database stores normalized categories (slugs) by design, so .eq() is safe.
+  const { data: promptsFromDb } = await supabaseAdmin
     .from('prompts')
-    .select('*');
+    .select('id, title, description')
+    .eq('category', categorySlug);
 
-  const prompts = (allPrompts || [])
-    .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+  const prompts = (promptsFromDb || []) as Pick<Prompt, 'id' | 'title' | 'description'>[];
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
