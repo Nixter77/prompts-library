@@ -86,8 +86,12 @@ const AddPromptPage = () => {
     <div className="flex flex-col items-center p-8">
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
-        <div>
+        <div className="space-y-2">
+          <label htmlFor="title" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Title <span className="text-red-500">*</span>
+          </label>
           <Input
+            id="title"
             placeholder="Title"
             value={title}
             onChange={(e) => {
@@ -99,14 +103,24 @@ const AddPromptPage = () => {
           {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
 
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <div className="space-y-2">
+          <label htmlFor="description" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
+        </div>
 
-        <div>
+        <div className="space-y-2">
+          <label htmlFor="category" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Category <span className="text-red-500">*</span>
+          </label>
           <Input
+            id="category"
             placeholder="Category"
             value={category}
             onChange={(e) => {
@@ -118,8 +132,12 @@ const AddPromptPage = () => {
           {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category}</p>}
         </div>
 
-        <div>
+        <div className="space-y-2">
+          <label htmlFor="promptText" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Prompt text <span className="text-red-500">*</span>
+          </label>
           <Textarea
+            id="promptText"
             placeholder="Prompt text"
             value={promptText}
             onChange={(e) => {
@@ -132,11 +150,17 @@ const AddPromptPage = () => {
           {errors.promptText && <p className="text-red-500 text-sm mt-1">{errors.promptText}</p>}
         </div>
 
-        <Input
-          placeholder="Tags (comma-separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
+        <div className="space-y-2">
+          <label htmlFor="tags" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+            Tags (comma-separated)
+          </label>
+          <Input
+            id="tags"
+            placeholder="Tags"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+          />
+        </div>
 
         <Button type="submit" disabled={loading}>
           {loading ? 'Adding...' : 'Add prompt'}
