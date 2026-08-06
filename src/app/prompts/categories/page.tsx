@@ -27,6 +27,31 @@ const CategoriesPage = async () => {
           label: t.category_data_analysis,
           description: t.category_data_analysis_desc
         };
+      case 'code-review':
+        return {
+          label: t.category_code_review,
+          description: t.category_code_review_desc
+        };
+      case 'agent-md':
+        return {
+          label: t.category_agent_md,
+          description: t.category_agent_md_desc
+        };
+      case 'osint':
+        return {
+          label: t.category_osint,
+          description: t.category_osint_desc
+        };
+      case 'tui':
+        return {
+          label: t.category_tui,
+          description: t.category_tui_desc
+        };
+      case 'security':
+        return {
+          label: t.category_security,
+          description: t.category_security_desc
+        };
       default:
         return {
           label: formatCategoryLabel(slug),
@@ -36,10 +61,16 @@ const CategoriesPage = async () => {
   };
 
   const defaultCategories = [
+    { slug: 'code-review' },
+    { slug: 'agent-md' },
+    { slug: 'tui' },
+    { slug: 'osint' },
+    { slug: 'security' },
     { slug: 'programming' },
-    { slug: 'images' },
     { slug: 'data-analysis' },
+    { slug: 'images' },
   ];
+
 
   const { data: categoriesFromDb } = await supabaseAdmin
     .from('prompts')

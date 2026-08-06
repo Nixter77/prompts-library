@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { supabaseAdmin } from '@/lib/supabase';
 import { cookies } from 'next/headers';
 import { translations, Language } from '@/lib/translations';
-import { BookOpen, FolderOpen, Globe, Code, Image, BarChart3, CheckCircle } from 'lucide-react';
+import { BookOpen, FolderOpen, Globe, Code, Image, BarChart3, CheckCircle, Shield } from 'lucide-react';
 
 const AboutPage = async () => {
   const cookieStore = await cookies();
@@ -47,6 +47,7 @@ const AboutPage = async () => {
     { icon: Code, text: t.about_category_programming },
     { icon: Image, text: t.about_category_images },
     { icon: BarChart3, text: t.about_category_data },
+    { icon: Shield, text: t.about_category_security },
   ];
 
   const steps = [

@@ -25,6 +25,11 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
   else if (categorySlug === 'images') categoryLabel = t.category_images;
   else if (categorySlug === 'data-analysis') categoryLabel = t.category_data_analysis;
+  else if (categorySlug === 'code-review') categoryLabel = t.category_code_review;
+  else if (categorySlug === 'agent-md') categoryLabel = t.category_agent_md;
+  else if (categorySlug === 'osint') categoryLabel = t.category_osint;
+  else if (categorySlug === 'tui') categoryLabel = t.category_tui;
+  else if (categorySlug === 'security') categoryLabel = t.category_security;
 
   return (
     <CategoryClientPage

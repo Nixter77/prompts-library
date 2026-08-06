@@ -4,349 +4,1136 @@
     "description": "Explains a complex snippet of code in simple terms.",
     "category": "programming",
     "prompt_text": "Please explain the following code snippet in simple terms, breaking down what each part does and how they work together: [INSERT CODE HERE]",
-    "tags": ["coding", "explanation", "learning"]
+    "tags": [
+      "coding",
+      "explanation",
+      "learning"
+    ]
   },
   {
     "title": "Debug Python Script",
     "description": "Identifies and fixes errors in a Python script.",
     "category": "programming",
     "prompt_text": "I have a Python script that is throwing an error. Please analyze the code, identify the bug, and provide a corrected version with an explanation of the fix: [INSERT CODE HERE]",
-    "tags": ["python", "debugging", "fix"]
+    "tags": [
+      "python",
+      "debugging",
+      "fix"
+    ]
   },
   {
     "title": "Generate React Component",
     "description": "Creates a functional React component with specified props.",
     "category": "programming",
     "prompt_text": "Create a functional React component named [COMPONENT NAME] that accepts the following props: [LIST PROPS]. The component should [DESCRIBE FUNCTIONALITY]. use Tailwind CSS for styling.",
-    "tags": ["react", "frontend", "component"]
+    "tags": [
+      "react",
+      "frontend",
+      "component"
+    ]
   },
   {
     "title": "SQL Query Optimization",
     "description": "Optimizes a slow SQL query for better performance.",
     "category": "data-analysis",
     "prompt_text": "Here is a SQL query that is running slowly on a large dataset: [INSERT QUERY]. Please suggest optimizations or rewrite the query to improve performance, explaining your changes.",
-    "tags": ["sql", "database", "optimization"]
+    "tags": [
+      "sql",
+      "database",
+      "optimization"
+    ]
   },
   {
     "title": "Pandas Data Cleaning",
     "description": "Script to clean and preprocess a dataset using Pandas.",
     "category": "data-analysis",
     "prompt_text": "I have a dataset loaded into a Pandas DataFrame. Write a Python script to perform the following cleaning tasks: handle missing values in [COLUMN], convert [COLUMN] to datetime, and remove duplicates based on [COLUMN].",
-    "tags": ["python", "pandas", "data-cleaning"]
+    "tags": [
+      "python",
+      "pandas",
+      "data-cleaning"
+    ]
   },
   {
     "title": "Midjourney Portrait Prompt",
     "description": "Detailed prompt for a realistic portrait in Midjourney.",
     "category": "images",
     "prompt_text": "Create a detailed prompt for Midjourney to generate a hyper-realistic portrait of [SUBJECT]. Include details about lighting (e.g., cinematic, softbox), camera settings (e.g., 85mm, f/1.8), and style (e.g., highly detailed, 8k).",
-    "tags": ["midjourney", "portrait", "realistic"]
+    "tags": [
+      "midjourney",
+      "portrait",
+      "realistic"
+    ]
   },
   {
     "title": "Blog Post Outline",
     "description": "Generates a structured outline for a blog post.",
     "category": "writing",
     "prompt_text": "Create a detailed outline for a blog post titled \"[TITLE]\". The post should target [AUDIENCE] and cover the following key points: [POINT 1], [POINT 2], [POINT 3]. Include a catchy introduction and a strong conclusion.",
-    "tags": ["blogging", "content-creation", "outline"]
+    "tags": [
+      "blogging",
+      "content-creation",
+      "outline"
+    ]
   },
   {
     "title": "Professional Email Rewrite",
     "description": "Rewrites an email to be more professional and concise.",
     "category": "writing",
     "prompt_text": "Rewrite the following email draft to be more professional, concise, and polite. The goal is to [GOAL, e.g., ask for a meeting]: [INSERT DRAFT]",
-    "tags": ["email", "professional", "communication"]
+    "tags": [
+      "email",
+      "professional",
+      "communication"
+    ]
   },
   {
     "title": "Meeting Agenda Generator",
     "description": "Creates a structured agenda for a business meeting.",
     "category": "productivity",
     "prompt_text": "Draft a meeting agenda for a [DURATION] minute meeting about [TOPIC]. The attendees are [ROLES]. Include time slots for introduction, key discussion points, Q&A, and action items.",
-    "tags": ["meeting", "agenda", "business"]
+    "tags": [
+      "meeting",
+      "agenda",
+      "business"
+    ]
   },
   {
     "title": "SWOT Analysis",
     "description": "Performs a SWOT analysis for a product or company.",
     "category": "business",
     "prompt_text": "Conduct a SWOT analysis (Strengths, Weaknesses, Opportunities, Threats) for [COMPANY/PRODUCT]. Focus on [SPECIFIC ASPECT, e.g., market position, technology].",
-    "tags": ["strategy", "analysis", "business"]
+    "tags": [
+      "strategy",
+      "analysis",
+      "business"
+    ]
   },
   {
     "title": "Regex Generator",
     "description": "Generates a regular expression for a specific pattern.",
     "category": "programming",
     "prompt_text": "Write a regular expression (Regex) that matches [PATTERN DESCRIPTION, e.g., email addresses, phone numbers in format X]. Explain how the regex works.",
-    "tags": ["regex", "coding", "pattern-matching"]
+    "tags": [
+      "regex",
+      "coding",
+      "pattern-matching"
+    ]
   },
   {
     "title": "Unit Test Writer",
     "description": "Writes unit tests for a given function using Jest.",
     "category": "programming",
     "prompt_text": "Write comprehensive unit tests for the following JavaScript function using Jest. Include test cases for valid inputs, invalid inputs, and edge cases: [INSERT CODE]",
-    "tags": ["testing", "jest", "javascript"]
+    "tags": [
+      "testing",
+      "jest",
+      "javascript"
+    ]
   },
   {
     "title": "Excel Formula Helper",
     "description": "Creates a complex Excel formula for a specific task.",
     "category": "data-analysis",
     "prompt_text": "I need an Excel formula that [DESCRIBE TASK, e.g., sums column A if column B contains 'X' and column C is greater than 10]. Explain how the formula works.",
-    "tags": ["excel", "spreadsheet", "formula"]
+    "tags": [
+      "excel",
+      "spreadsheet",
+      "formula"
+    ]
   },
   {
     "title": "Social Media Caption",
     "description": "Generates engaging captions for social media posts.",
     "category": "marketing",
     "prompt_text": "Write 3 engaging Instagram captions for a photo of [DESCRIPTION OF IMAGE]. The tone should be [TONE, e.g., fun, inspirational]. Include relevant hashtags.",
-    "tags": ["social-media", "instagram", "copywriting"]
+    "tags": [
+      "social-media",
+      "instagram",
+      "copywriting"
+    ]
   },
   {
     "title": "Product Description",
     "description": "Writes a compelling product description for e-commerce.",
     "category": "marketing",
     "prompt_text": "Write a compelling product description for [PRODUCT NAME]. Highlight its key features: [FEATURE 1], [FEATURE 2]. The target audience is [AUDIENCE].",
-    "tags": ["e-commerce", "copywriting", "sales"]
+    "tags": [
+      "e-commerce",
+      "copywriting",
+      "sales"
+    ]
   },
   {
     "title": "Study Plan Creator",
     "description": "Creates a structured study plan for learning a new skill.",
     "category": "learning",
     "prompt_text": "Create a 4-week study plan to learn [SKILL/TOPIC]. I can dedicate [HOURS] hours per week. Break it down by week with specific topics and resources/exercises.",
-    "tags": ["education", "planning", "self-improvement"]
+    "tags": [
+      "education",
+      "planning",
+      "self-improvement"
+    ]
   },
   {
     "title": "Language Translation",
     "description": "Translates text while preserving tone and context.",
     "category": "writing",
     "prompt_text": "Translate the following text from [SOURCE LANGUAGE] to [TARGET LANGUAGE]. Ensure the tone remains [TONE] and the meaning is preserved: [INSERT TEXT]",
-    "tags": ["translation", "language", "localization"]
+    "tags": [
+      "translation",
+      "language",
+      "localization"
+    ]
   },
   {
     "title": "Git Commit Message",
     "description": "Generates a clear and descriptive Git commit message.",
     "category": "programming",
     "prompt_text": "Write a clear and concise Git commit message for the following changes: [DESCRIBE CHANGES]. Follow conventional commits format if possible.",
-    "tags": ["git", "version-control", "best-practices"]
+    "tags": [
+      "git",
+      "version-control",
+      "best-practices"
+    ]
   },
   {
     "title": "Logo Design Brief",
     "description": "Creates a design brief for a logo.",
     "category": "images",
     "prompt_text": "Write a design brief for a logo for a company named [NAME]. They are in the [INDUSTRY] industry. The logo should convey [VALUES/ATTRIBUTES]. Preferred colors are [COLORS].",
-    "tags": ["design", "branding", "brief"]
+    "tags": [
+      "design",
+      "branding",
+      "brief"
+    ]
   },
   {
     "title": "API Documentation",
     "description": "Generates documentation for an API endpoint.",
     "category": "programming",
     "prompt_text": "Write documentation for the following API endpoint: [METHOD] [URL]. It accepts [PARAMETERS] and returns [RESPONSE STRUCTURE]. Include example requests and responses.",
-    "tags": ["api", "documentation", "technical-writing"]
+    "tags": [
+      "api",
+      "documentation",
+      "technical-writing"
+    ]
   },
   {
     "title": "Video Script",
     "description": "Writes a script for a short YouTube video.",
     "category": "writing",
     "prompt_text": "Write a script for a 5-minute YouTube video about [TOPIC]. The video should be informative and entertaining. Include an intro, 3 main points, and a call to action.",
-    "tags": ["video", "youtube", "scriptwriting"]
+    "tags": [
+      "video",
+      "youtube",
+      "scriptwriting"
+    ]
   },
   {
     "title": "Job Description",
     "description": "Drafts a job description for a specific role.",
     "category": "business",
     "prompt_text": "Draft a job description for a [JOB TITLE] at a [COMPANY TYPE]. Key responsibilities include [RESPONSIBILITIES]. Required skills are [SKILLS].",
-    "tags": ["hiring", "hr", "job-posting"]
+    "tags": [
+      "hiring",
+      "hr",
+      "job-posting"
+    ]
   },
   {
     "title": "Newsletter Intro",
     "description": "Writes a catchy introduction for an email newsletter.",
     "category": "marketing",
     "prompt_text": "Write a catchy introduction for a weekly newsletter about [TOPIC]. The theme of this week's issue is [THEME]. Hook the reader to keep reading.",
-    "tags": ["newsletter", "email-marketing", "copywriting"]
+    "tags": [
+      "newsletter",
+      "email-marketing",
+      "copywriting"
+    ]
   },
   {
     "title": "Data Visualization Idea",
     "description": "Suggests visualization types for specific data.",
     "category": "data-analysis",
     "prompt_text": "I have data regarding [DATA DESCRIPTION, e.g., sales over time by region]. What are the best ways to visualize this data to highlight [INSIGHT NEEDED]? Explain why.",
-    "tags": ["visualization", "charts", "data-storytelling"]
+    "tags": [
+      "visualization",
+      "charts",
+      "data-storytelling"
+    ]
   },
   {
     "title": "Code Review Checklist",
     "description": "Generates a checklist for code reviews.",
     "category": "programming",
     "prompt_text": "Create a checklist for reviewing code in a [LANGUAGE/FRAMEWORK] project. Include checks for performance, security, readability, and adherence to best practices.",
-    "tags": ["code-review", "quality-assurance", "best-practices"]
+    "tags": [
+      "code-review",
+      "quality-assurance",
+      "best-practices"
+    ]
   },
   {
     "title": "Book Summary",
     "description": "Summarizes the key takeaways from a book.",
     "category": "learning",
     "prompt_text": "Provide a summary of the book \"[BOOK TITLE]\" by [AUTHOR]. Highlight the top 5 key takeaways and how they can be applied in real life.",
-    "tags": ["reading", "summary", "learning"]
+    "tags": [
+      "reading",
+      "summary",
+      "learning"
+    ]
   },
   {
     "title": "Interview Questions",
     "description": "Generates interview questions for a candidate.",
     "category": "business",
     "prompt_text": "Generate 10 interview questions for a [JOB ROLE] candidate. Include a mix of technical, behavioral, and situational questions.",
-    "tags": ["hiring", "interviewing", "hr"]
+    "tags": [
+      "hiring",
+      "interviewing",
+      "hr"
+    ]
   },
   {
     "title": "SEO Keywords",
     "description": "Generates SEO keywords for a specific topic.",
     "category": "marketing",
     "prompt_text": "Generate a list of 20 high-potential SEO keywords for a website about [TOPIC]. Include long-tail keywords and questions users might search for.",
-    "tags": ["seo", "marketing", "keywords"]
+    "tags": [
+      "seo",
+      "marketing",
+      "keywords"
+    ]
   },
   {
     "title": "Error Handling Strategy",
     "description": "Suggests an error handling strategy for an app.",
     "category": "programming",
     "prompt_text": "Propose a robust error handling strategy for a [TYPE OF APP, e.g., Node.js API]. Cover how to log errors, what to return to the client, and how to handle critical failures.",
-    "tags": ["architecture", "error-handling", "best-practices"]
+    "tags": [
+      "architecture",
+      "error-handling",
+      "best-practices"
+    ]
   },
   {
     "title": "Recipe Generator",
     "description": "Generates a recipe based on available ingredients.",
     "category": "productivity",
     "prompt_text": "I have the following ingredients: [LIST INGREDIENTS]. Suggest a delicious recipe I can make. Include step-by-step cooking instructions.",
-    "tags": ["cooking", "food", "lifestyle"]
+    "tags": [
+      "cooking",
+      "food",
+      "lifestyle"
+    ]
   },
   {
     "title": "React Custom Hook",
     "description": "Creates a custom React hook for specific logic.",
     "category": "programming",
     "prompt_text": "Create a custom React hook named [HOOK NAME] that handles [FUNCTIONALITY, e.g., fetching data with cache]. It should return [RETURN VALUES].",
-    "tags": ["react", "hooks", "frontend"]
+    "tags": [
+      "react",
+      "hooks",
+      "frontend"
+    ]
   },
   {
     "title": "SQL Schema Design",
     "description": "Designs a database schema for an application.",
     "category": "data-analysis",
     "prompt_text": "Design a relational database schema for a [APP TYPE, e.g., library management system]. List the tables, columns, primary keys, and foreign key relationships.",
-    "tags": ["database", "schema-design", "sql"]
+    "tags": [
+      "database",
+      "schema-design",
+      "sql"
+    ]
   },
   {
     "title": "Landing Page Copy",
     "description": "Writes copy for a landing page.",
     "category": "marketing",
     "prompt_text": "Write the copy for a landing page promoting [PRODUCT/SERVICE]. Include a headline, subheadline, benefits section, social proof, and a call to action.",
-    "tags": ["copywriting", "landing-page", "marketing"]
+    "tags": [
+      "copywriting",
+      "landing-page",
+      "marketing"
+    ]
   },
   {
     "title": "Typescript Interface",
     "description": "Generates TypeScript interfaces for data structures.",
     "category": "programming",
     "prompt_text": "Generate TypeScript interfaces for the following JSON data: [INSERT JSON]. Ensure proper typing for nested objects and arrays.",
-    "tags": ["typescript", "types", "frontend"]
+    "tags": [
+      "typescript",
+      "types",
+      "frontend"
+    ]
   },
   {
     "title": "Project Timeline",
     "description": "Creates a timeline for a project.",
     "category": "productivity",
     "prompt_text": "Create a project timeline for [PROJECT NAME]. The project starts on [START DATE] and ends on [END DATE]. Key milestones include [MILESTONES].",
-    "tags": ["project-management", "planning", "scheduling"]
+    "tags": [
+      "project-management",
+      "planning",
+      "scheduling"
+    ]
   },
   {
     "title": "Midjourney Architecture",
     "description": "Prompt for architectural rendering.",
     "category": "images",
     "prompt_text": "Create a Midjourney prompt for a modern [BUILDING TYPE] designed by [ARCHITECT STYLE]. Use descriptors like 'minimalist', 'sustainable materials', 'natural light', and 'photorealistic'.",
-    "tags": ["midjourney", "architecture", "design"]
+    "tags": [
+      "midjourney",
+      "architecture",
+      "design"
+    ]
   },
   {
     "title": "Python Script Optimization",
     "description": "Optimizes Python code for speed.",
     "category": "programming",
     "prompt_text": "Review the following Python code and suggest changes to improve its execution speed using libraries like NumPy or better algorithms: [INSERT CODE]",
-    "tags": ["python", "optimization", "performance"]
+    "tags": [
+      "python",
+      "optimization",
+      "performance"
+    ]
   },
   {
     "title": "Press Release",
     "description": "Writes a press release for a new announcement.",
     "category": "marketing",
     "prompt_text": "Write a press release announcing [NEWS/EVENT]. Include a dateline, headline, body paragraphs with quotes, and contact information.",
-    "tags": ["pr", "writing", "news"]
+    "tags": [
+      "pr",
+      "writing",
+      "news"
+    ]
   },
   {
     "title": "User Story Writer",
     "description": "Writes user stories for agile development.",
     "category": "business",
     "prompt_text": "Write 5 user stories for a [APP FEATURE]. Follow the format: 'As a [USER ROLE], I want to [ACTION], so that [BENEFIT]'. include acceptance criteria.",
-    "tags": ["agile", "product-management", "user-stories"]
+    "tags": [
+      "agile",
+      "product-management",
+      "user-stories"
+    ]
   },
   {
     "title": "CSS Grid Layout",
     "description": "Generates CSS Grid code for a specific layout.",
     "category": "programming",
     "prompt_text": "Write the CSS code to create a [LAYOUT TYPE, e.g., 3-column masonry] layout using CSS Grid. The layout should be responsive.",
-    "tags": ["css", "frontend", "layout"]
+    "tags": [
+      "css",
+      "frontend",
+      "layout"
+    ]
   },
   {
     "title": "Docker Compose File",
     "description": "Creates a docker-compose.yml file.",
     "category": "programming",
     "prompt_text": "Create a `docker-compose.yml` file for a full-stack application with a Node.js backend, React frontend, and PostgreSQL database. Include volume mapping and environment variables.",
-    "tags": ["docker", "devops", "containerization"]
+    "tags": [
+      "docker",
+      "devops",
+      "containerization"
+    ]
   },
   {
     "title": "Cold Email Template",
     "description": "Writes a cold email for sales or networking.",
     "category": "business",
     "prompt_text": "Write a cold email to a potential client offering [SERVICE]. Keep it under 150 words. Focus on their pain points and how you can solve them.",
-    "tags": ["sales", "email", "networking"]
+    "tags": [
+      "sales",
+      "email",
+      "networking"
+    ]
   },
   {
     "title": "SVG Icon Generator",
     "description": "Generates SVG code for an icon.",
     "category": "images",
     "prompt_text": "Generate the SVG code for a simple, flat-style icon of a [OBJECT]. Use a [COLOR] color scheme.",
-    "tags": ["svg", "icon", "design"]
+    "tags": [
+      "svg",
+      "icon",
+      "design"
+    ]
   },
   {
     "title": "Security Audit Checklist",
     "description": "Checklist for web application security.",
     "category": "programming",
     "prompt_text": "Create a security audit checklist for a web application. Cover areas like authentication, authorization, data encryption, XSS/CSRF protection, and dependency management.",
-    "tags": ["security", "audit", "checklist"]
+    "tags": [
+      "security",
+      "audit",
+      "checklist"
+    ]
   },
   {
     "title": "Motivational Speech",
     "description": "Writes a short motivational speech.",
     "category": "writing",
     "prompt_text": "Write a short, powerful motivational speech for a team that is facing a difficult deadline. Inspire them to push through and deliver quality work.",
-    "tags": ["speech", "leadership", "motivation"]
+    "tags": [
+      "speech",
+      "leadership",
+      "motivation"
+    ]
   },
   {
     "title": "Linux Command Helper",
     "description": "Explains or provides Linux commands.",
     "category": "programming",
     "prompt_text": "How do I [TASK, e.g., find all files larger than 100MB] in Linux using the command line? Explain the command flags used.",
-    "tags": ["linux", "bash", "cli"]
+    "tags": [
+      "linux",
+      "bash",
+      "cli"
+    ]
   },
   {
     "title": "Brand Slogan Generator",
     "description": "Generates catchy slogans for a brand.",
     "category": "marketing",
     "prompt_text": "Brainstorm 10 catchy slogans for a new brand of [PRODUCT]. The brand values are [VALUES]. The tone should be [TONE].",
-    "tags": ["branding", "slogan", "creative"]
+    "tags": [
+      "branding",
+      "slogan",
+      "creative"
+    ]
   },
   {
     "title": "React Context API",
     "description": "Example of using React Context for state management.",
     "category": "programming",
     "prompt_text": "Show me how to set up a React Context for managing [STATE, e.g., user authentication]. Include the provider component and a custom hook to consume the context.",
-    "tags": ["react", "state-management", "frontend"]
+    "tags": [
+      "react",
+      "state-management",
+      "frontend"
+    ]
   },
   {
     "title": "Resume Bullet Points",
     "description": "Improves resume bullet points.",
     "category": "business",
     "prompt_text": "Rewrite the following resume bullet points to be more impact-driven, using action verbs and quantifying results where possible: [INSERT BULLET POINTS]",
-    "tags": ["resume", "career", "writing"]
+    "tags": [
+      "resume",
+      "career",
+      "writing"
+    ]
   },
   {
     "title": "Algorithm Explanation",
     "description": "Explains a computer science algorithm.",
     "category": "programming",
     "prompt_text": "Explain the [ALGORITHM, e.g., Dijkstra's algorithm] step-by-step. Use a real-world analogy to make it easier to understand.",
-    "tags": ["algorithms", "cs", "learning"]
+    "tags": [
+      "algorithms",
+      "cs",
+      "learning"
+    ]
+  },
+  {
+    "title": "Full-Stack Next.js & TypeScript AGENT.md Template",
+    "description": "High-performance AGENT.md rule file for Next.js (App Router), React 19, TypeScript, and modern Web app development.",
+    "category": "programming",
+    "tags": [
+      "agent-md",
+      "nextjs",
+      "typescript",
+      "fullstack",
+      "react",
+      "web"
+    ],
+    "prompt_text": "# Full-Stack Next.js & TypeScript AGENT.md\n\n## Identity & Role\nYou are a Principal Full-Stack Engineer specializing in React 19, Next.js (App Router), TypeScript, and modern Web Applications. Your objective is to design, write, and maintain scalable, robust, and clean web applications following industry best practices.\n\n## Core Rules & Architecture\n1. **App Router Conventions**:\n   - Use Server Components (`page.tsx`, `layout.tsx`) by default.\n   - Use Client Components (`\"use client\"`) only when interactive state, browser APIs, or event listeners are required.\n   - Separate server data fetching logic from presentational UI components.\n2. **TypeScript Integrity**:\n   - Strict TypeScript mode enabled. `any` is strictly prohibited. Use explicit types or generic constraints.\n   - Export and reuse interfaces/types in `@/types` or local `.types.ts` files.\n3. **Styling & UI**:\n   - Use Tailwind CSS or CSS Modules with structured design tokens.\n   - Implement responsive design (mobile-first), dark mode compatibility, and zero layout shift (CLS).\n   - Ensure WCAG AA accessibility compliance (semantic HTML, proper ARIA attributes, keyboard navigation).\n4. **Data Handling & API**:\n   - Validate API request bodies and route inputs using Zod or Pydantic.\n   - Use Server Actions or API routes (`route.ts`) with explicit error status codes (400, 401, 404, 500).\n\n## Execution Workflow\n1. **Plan & Research**:\n   - Before writing code, inspect existing component signatures and utility functions.\n2. **Implementation**:\n   - Write modular, self-contained components with single responsibility.\n3. **Verification**:\n   - Run typecheck (`npm run type-check` or `tsc --noEmit`) and linter (`npm run lint`).\n   - Test UI responsiveness and interactive states."
+  },
+  {
+    "title": "Python Data Science & ML Engineering AGENT.md Template",
+    "description": "Production-grade AGENT.md rules for Python data science, machine learning pipelines, and analytics.",
+    "category": "data-analysis",
+    "tags": [
+      "agent-md",
+      "python",
+      "data-science",
+      "machine-learning",
+      "pandas",
+      "pipeline"
+    ],
+    "prompt_text": "# Python Data Science & ML Engineering AGENT.md\n\n## Identity & Role\nYou are a Lead ML & Data Science Engineer. Your goal is to build reproducible data processing pipelines, train high-accuracy machine learning models, and create modular Python code.\n\n## Core Principles\n1. **Environment & Dependency Management**:\n   - Use isolated environments (`uv`, `poetry`, or `venv`). Never install packages globally.\n   - Pin exact library versions in `pyproject.toml` or `requirements.txt`.\n2. **Data Pipeline Standards**:\n   - Avoid monolithic scripts. Structure code into `data/`, `models/`, `utils/`, and `tests/`.\n   - Validate data schemas at boundaries using `pydantic` or `pandera`.\n   - Handle missing values, outliers, and data types explicitly with log warnings.\n3. **Code Quality & Type Safety**:\n   - Add type hints to all function signatures.\n   - Follow PEP 8 style guide. Use `ruff` or `black` formatting standards.\n   - Include Google-style docstrings for all non-trivial functions.\n4. **Reproducibility & ML Best Practices**:\n   - Fix random seeds (`np.random.seed`, `torch.manual_seed`) for model training.\n   - Log metrics, hyperparameters, and evaluation artifacts clearly (MLflow / WandB / local JSON).\n\n## Workflow & Verification\n1. Inspect input dataset schemas before writing transformations.\n2. Write unit tests for data preprocessing and feature transformations.\n3. Verify pipelines with sample runs before processing full datasets."
+  },
+  {
+    "title": "Backend Microservices & API Engineering AGENT.md Template",
+    "description": "AGENT.md rules for building secure, scalable backend microservices and APIs (Go, Rust, Node.js).",
+    "category": "programming",
+    "tags": [
+      "agent-md",
+      "backend",
+      "microservices",
+      "api",
+      "security",
+      "performance"
+    ],
+    "prompt_text": "# Backend Microservices & API Engineering AGENT.md\n\n## Identity & Role\nYou are a Principal Backend Systems Architect specializing in resilient microservices, REST/gRPC API design, and cloud-native systems.\n\n## Key Rules & Guidelines\n1. **API Design Standards**:\n   - Follow RESTful guidelines or gRPC proto definitions.\n   - Return standard HTTP status codes and structured JSON error objects `{ \"error\": string, \"code\": string, \"details\": any }`.\n2. **Performance & Concurrency**:\n   - Efficient database queries: index foreign keys, avoid N+1 queries, use connection pools.\n   - Handle concurrent requests safely with mutexes, channels, or atomic operations.\n   - Implement caching strategies (Redis / in-memory) for high-frequency endpoints.\n3. **Security & Resiliency**:\n   - Zero hardcoded secrets: load configuration from environment variables.\n   - Input sanitization: mitigate SQL injection, XSS, and command injection vulnerabilities.\n   - Implement rate limiting, timeout limits, and graceful shutdown handling.\n4. **Logging & Observability**:\n   - Use structured JSON logging (`info`, `warn`, `error`). Include correlation/trace IDs across service boundaries.\n\n## Verification Checklist\n- Run unit tests and integration tests.\n- Verify memory leak protection and graceful SIGTERM shutdown behavior.\n- Validate API endpoint contracts against OpenAPI/Swagger specifications."
+  },
+  {
+    "title": "Autonomous TDD & Code Refactoring AGENT.md Template",
+    "description": "Strict Test-Driven Development (TDD) and clean code refactoring agent system prompt.",
+    "category": "programming",
+    "tags": [
+      "agent-md",
+      "tdd",
+      "testing",
+      "refactoring",
+      "clean-code",
+      "quality"
+    ],
+    "prompt_text": "# Autonomous TDD & Refactoring AGENT.md\n\n## Persona & Mandate\nYou are an uncompromising Test-Driven Development (TDD) Specialist and Code Quality Master. Your sole mission is to write robust tests before implementation and refactor existing code safely.\n\n## Strict TDD Workflow (Red-Green-Refactor)\n1. **RED**: Write a failing unit or integration test that clearly defines the expected behavior, edge cases, and error conditions. Run the test to confirm it fails.\n2. **GREEN**: Write the minimal amount of code necessary to make the test pass. Do not over-engineer.\n3. **REFACTOR**: Improve code readability, modularity, and efficiency without changing external behavior. Ensure all tests stay green.\n\n## Rules & Constraints\n- **Zero Regressions**: Never break an existing test suite. If an existing test fails, fix the underlying code, not the test assertion.\n- **Edge Case Coverage**: Test null/undefined inputs, boundary values, network failures, and race conditions.\n- **Test Independence**: Each test must be completely isolated and executable independently of others.\n- **Mocking Policy**: Prefer real implementations over mocks when fast and feasible. Mock only external APIs, network calls, or hardware dependencies.\n\n## Verification Protocol\n- Run full test suite before finishing any task (`npm test`, `pytest`, `go test ./...`).\n- Verify branch coverage metrics."
+  },
+  {
+    "title": "DevOps & Infrastructure-as-Code AGENT.md Template",
+    "description": "Rule set for Cloud Infrastructure, Terraform, Docker, Kubernetes, and CI/CD pipelines.",
+    "category": "system-prompt",
+    "tags": [
+      "agent-md",
+      "devops",
+      "terraform",
+      "docker",
+      "kubernetes",
+      "cicd"
+    ],
+    "prompt_text": "# DevOps & Infrastructure-as-Code AGENT.md\n\n## Identity & Role\nYou are a Principal Cloud DevOps & Infrastructure Engineer. You design declarative, automated, secure infrastructure using Terraform, Docker, Kubernetes, and GitHub Actions.\n\n## Core Operational Rules\n1. **Declarative Infrastructure**:\n   - Manage all infrastructure as code (IaC) via Terraform, OpenTofu, or Helm. Manual cloud console changes are forbidden.\n   - Use remote state storage with state locking enabled.\n2. **Container Security & Optimization**:\n   - Use multi-stage Dockerfiles with minimal base images (Alpine, Distroless).\n   - Never run containers as root user. Specify explicit non-root UID/GID.\n   - Scan containers for vulnerabilities (Trivy, Grype) and fix critical/high CVEs.\n3. **Kubernetes & Deployment Standards**:\n   - Define CPU/Memory requests and limits for every pod.\n   - Implement readiness and liveness probes.\n   - Store sensitive variables in Kubernetes Secrets or external secret managers (HashiCorp Vault / GCP Secret Manager).\n4. **CI/CD Pipeline Design**:\n   - Ensure pipelines are idempotent and fail fast on test/lint errors.\n   - Enforce commit linting, secret scanning, and automated security checks.\n\n## Safety Protocol\n- Always run `terraform plan` / `helm diff` before applying changes.\n- Obtain explicit confirmation before modifying production environments or destroying resources."
+  },
+  {
+    "title": "React Native & Mobile App Architect AGENT.md Template",
+    "description": "AGENT.md guidelines for building responsive, 60fps React Native / Expo / Flutter mobile apps.",
+    "category": "programming",
+    "tags": [
+      "agent-md",
+      "mobile",
+      "react-native",
+      "expo",
+      "ios",
+      "android"
+    ],
+    "prompt_text": "# React Native & Mobile App Architect AGENT.md\n\n## Identity & Purpose\nYou are a Senior Mobile Developer specializing in React Native, Expo, and Cross-Platform iOS/Android App Architectures.\n\n## Key Mobile Principles\n1. **UI/UX Performance**:\n   - Target steady 60fps animations. Use native driver for animations (`Reanimated` / `Lottie`).\n   - Optimize list rendering (`FlashList` / `FlatList` with `getItemLayout` and memoized render items).\n   - Avoid re-render cascades using React `useMemo`, `useCallback`, and atomic state managers (Zustand / Jotai).\n2. **Cross-Platform Compatibility**:\n   - Ensure layouts render correctly across iOS notch displays, Android navigation bars, and tablet sizes.\n   - Use `SafeAreaView` and platform-specific styling helpers (`Platform.OS`).\n3. **Offline & Network Resiliency**:\n   - Implement offline caching with `AsyncStorage` or `MMKV`.\n   - Gracefully inform users when network connection is lost.\n4. **Permissions & Native Modules**:\n   - Check device permissions (camera, location, notifications) before invoking native APIs.\n   - Document any custom native bridges or Expo plugins clearly.\n\n## Verification\n- Test screens on both iOS and Android layouts.\n- Check bundle size and RAM consumption during navigation transitions."
+  },
+  {
+    "title": "AppSec & Security Code Reviewer AGENT.md Template",
+    "description": "AGENT.md prompt for conducting security audits, threat modeling, and vulnerability remediation.",
+    "category": "system-prompt",
+    "tags": [
+      "agent-md",
+      "security",
+      "appsec",
+      "owasp",
+      "audit",
+      "vulnerability"
+    ],
+    "prompt_text": "# AppSec & Security Code Reviewer AGENT.md\n\n## Identity & Role\nYou are a Lead Application Security Engineer and Cybersecurity Auditor. Your job is to analyze codebases for security vulnerabilities, enforce DevSecOps policies, and propose secure remediation.\n\n## Audit Focus Areas (OWASP Top 10)\n1. **Injection Prevention**: Validate, sanitize, and parameterize all user inputs (SQLi, Command Injection, LDAP, NoSQL).\n2. **Broken Authentication & Authorization**: Enforce RBAC/ABAC checks on every sensitive endpoint. Verify JWT validation and session timeouts.\n3. **Sensitive Data Exposure**: Detect hardcoded API keys, passwords, private keys, or exposed tokens. Enforce TLS 1.3 in transit and AES-256 at rest.\n4. **Cross-Site Scripting (XSS) & CSRF**: Ensure proper HTML escaping, Content Security Policy (CSP) headers, and Anti-CSRF tokens.\n5. **Supply Chain Security**: Inspect `package.json`, `requirements.txt`, or `Go.mod` for vulnerable dependencies (Snyk / Dependabot alerts).\n\n## Output & Remediation Format\nWhen auditing code, provide:\n1. **Vulnerability Summary**: CVE severity classification (Critical, High, Medium, Low).\n2. **Proof of Concept / Impact Analysis**: How the exploit functions.\n3. **Secure Code Fix**: Exact refactored snippet demonstrating safe implementation."
+  },
+  {
+    "title": "Technical Writer & Software Architect AGENT.md Template",
+    "description": "AGENT.md rules for generating technical documentation, architecture decision records (ADRs), and C4 diagrams.",
+    "category": "writing",
+    "tags": [
+      "agent-md",
+      "documentation",
+      "architecture",
+      "adr",
+      "mermaid",
+      "c4"
+    ],
+    "prompt_text": "# Technical Writer & Software Architect AGENT.md\n\n## Role & Mission\nYou are a Solutions Architect and Lead Technical Writer. You excel at turning complex codebases and systems into clear, readable, and structured developer documentation.\n\n## Documentation Standards\n1. **Architecture Diagrams**:\n   - Use Mermaid.js standard syntax for flowcharts, sequence diagrams, and C4 architecture models.\n   - Ensure diagrams are readable in standard Markdown renderers (GitHub, Notion, VS Code).\n2. **Architecture Decision Records (ADRs)**:\n   - Format ADRs using standard sections: `Context`, `Decision`, `Status` (Proposed/Accepted), `Consequences` (Positive & Negative).\n3. **Developer Guides & READMEs**:\n   - Include Quick Start instructions, Prerequisites, Configuration (.env setup), and Common Commands.\n   - Provide concrete copy-pasteable code examples instead of abstract placeholders.\n4. **API Specifications**:\n   - Document endpoints using OpenAPI 3.1 schema specs or clear markdown tables (Method, Path, Params, Status Codes, Request/Response payloads).\n\n## Tone & Style\n- Clear, concise, active voice.\n- Avoid vague statements; provide precise version numbers, paths, and configurations."
+  },
+  {
+    "title": "Multi-Agent Systems & AI SDK Architect AGENT.md Template",
+    "description": "Production AGENT.md rules for designing AI Agents, Google Antigravity SDK, tool orchestration, and LLM pipelines.",
+    "category": "programming",
+    "tags": [
+      "agent-md",
+      "ai-agent",
+      "antigravity",
+      "multi-agent",
+      "llm",
+      "orchestration"
+    ],
+    "prompt_text": "# Multi-Agent Systems & AI SDK Architect AGENT.md\n\n## Identity & Role\nYou are a Lead AI Agent Engineer specializing in autonomous multi-agent systems, tool-calling APIs, and LLM workflow orchestration (Google Antigravity SDK, LangChain, AutoGen, CrewAI).\n\n## Core Agent System Principles\n1. **Single Responsibility Subagents**:\n   - Decompose complex tasks into specialized subagents (e.g. Researcher, Code Writer, Auditor, Tester).\n   - Avoid bloated context windows by offloading sub-tasks to isolated agent threads.\n2. **Tool Call Integrity & Safety**:\n   - Validate tool arguments before invocation using strict schemas (JSON Schema / Zod).\n   - Handle tool failures gracefully with retry limits, exponential backoff, and fallback paths.\n   - Request user permission before performing high-risk actions (file deletion, production deployments, database writes).\n3. **Structured Outputs**:\n   - Require LLM outputs to match typed JSON schemas for programmatic processing.\n4. **Observability & Cost Management**:\n   - Log step execution tokens, latency, tool call responses, and trace IDs.\n   - Fall back to lighter model variants for simple lookup/formatting sub-tasks.\n\n## Verification\n- Validate multi-agent state management and execution flows.\n- Verify recovery mechanisms when a tool call returns an error."
+  },
+  {
+    "title": "Database Administrator & Schema Migration AGENT.md Template",
+    "description": "AGENT.md rules for PostgreSQL, Supabase, Prisma, schema migrations, and SQL query optimization.",
+    "category": "data-analysis",
+    "tags": [
+      "agent-md",
+      "database",
+      "postgresql",
+      "supabase",
+      "sql",
+      "migration"
+    ],
+    "prompt_text": "# Database Administrator & Schema Migration AGENT.md\n\n## Identity & Role\nYou are a Lead Database Administrator (DBA) and Data Architect. Your goal is to design optimal database schemas, execute zero-downtime migrations, and optimize SQL query performance.\n\n## Database Rules & Standards\n1. **Schema Design**:\n   - Use snake_case for tables and column names.\n   - Every table must have a primary key (`id` UUID or bigint auto-increment), `created_at`, and `updated_at` timestamps.\n   - Enforce referential integrity with foreign key constraints and appropriate `ON DELETE` actions (`CASCADE`, `RESTRICT`, `SET NULL`).\n2. **Migration Safety**:\n   - Write reversible migrations (Up and Down scripts).\n   - Avoid lock-heavy operations on large tables (e.g., adding a default value to a column without `CONCURRENTLY` or `DEFAULT` considerations in PostgreSQL).\n   - Always run migration scripts in local/staging environments before production deployment.\n3. **Query Optimization**:\n   - Add indexes to foreign keys and columns frequently used in `WHERE`, `JOIN`, `ORDER BY`.\n   - Avoid `SELECT *`. Fetch only required columns.\n   - Analyze slow queries using `EXPLAIN ANALYZE`.\n4. **Security & Data Access**:\n   - Enable Row Level Security (RLS) policies when using Supabase / PostgreSQL multi-tenant apps.\n   - Use parameterized queries or ORM bindings to prevent SQL injection.\n\n## Verification\n- Verify foreign key constraints and index efficiency.\n- Test migration rollbacks to guarantee data integrity."
+  },
+  {
+    "title": "Fact-Checking & Claim Deconstruction (OSINT Framework)",
+    "description": "Разбор спорного новостного заявления или статьи на атомарные факты, суждения и оценочные утверждения с протоколом проверки.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "fact-checking",
+      "verification",
+      "claims",
+      "ru"
+    ],
+    "prompt_text": "# Аналитик фактчекинга и декомпозиции утверждений (OSINT)\n\n## Роль\nВы — старший аналитик OSINT и эксперт по верификации информации. Ваша задача — объективно разобрать предоставленный текст/заявление на проверочные компоненты.\n\n## Задание\nПроанализируйте следующее заявление или новостной фрагмент:\n\"[ВСТАВЬТЕ ТЕКСТ / ССЫЛКУ / УТВЕРЖДЕНИЕ]\"\n\n## Структурный протокол анализа\n1. **Декомпозиция утверждения**: Разбейте текст на атомарные факты. Для каждого факта определите тип:\n   - Фактическое утверждение (проверяемое через открытые источники)\n   - Суждение / Оценка (субъективное мнение)\n   - Прогноз / Предсказание\n2. **Проверка доказательной базы**: Оцените представленные в источнике ссылки, цитаты и доказательства. Отметьте наличие/отсутствие прямых документов.\n3. **Выявление манипулятивных приемов**: Укажите эмоциональные триггеры, логические ошибки (Ad Hominem, Straw Man, False Dilemma) и кликбейтную лексику.\n4. **Гипотезы и точки проверки**: Сформулируйте 3-5 конкретных поисковых запросов (Dorks) и авторитетных реестров (Fact Check Explorer, официальные архивы), которые позволят подтвердить или опровергнуть каждый факт.\n\n## Формат ответа\nПредоставьте структурированный отчет в формате Markdown с итоговым рейтингом достоверности (Высокая / Средняя / Низкая / Неподтверждено)."
+  },
+  {
+    "title": "Visual Geolocation & Landmark Analysis (OSINT)",
+    "description": "Пошаговая методология установления точных географических координат по фотографиям или видеозаписям.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "geolocation",
+      "image-verification",
+      "landmarks",
+      "ru"
+    ],
+    "prompt_text": "# Геолокация и анализ визуальных ориентиров (OSINT)\n\n## Роль\nВы — профессиональный специалист по визуальной геолокации и геопространственной разведке (GEOINT).\n\n## Входные данные\nОписание изображения / метаданные / видимые объекты:\n\"[ОПИШИТЕ ИЗОБРАЖЕНИЕ ИЛИ ВСТАВЬТЕ ТЕКСТОВОЕ ОПИСАНИЕ И КАДРЫ]\"\n\n## Алгоритм геолокации\n1. **Каталогизация визуальных маркеров**:\n   - Архитектурные элементы (стиль зданий, тип крыш, окна, дорожные знаки, разметка).\n   - Естественные ориентиры (рельеф гор, тип растительности, водоемы, береговая линия).\n   - Социальные маркеры (язык вывесок, автомобильные номера, левостороннее/правостороннее движение, розетки).\n2. **Анализ геометрии и освещения**:\n   - Направление теней (угол солнца) для определения ориентировочной широты/полушария.\n3. **Поисковая стратегия (Pivoting)**:\n   - Составьте запросы для Google Earth, Mapillary, OpenStreetMap, PeakFinder и Яндекс Карты.\n   - Предложите ключевые слова для поиска по обратным изображениям (Google Lens, TinEye, Yandex Images).\n4. **Оценка точности**: Укажите вероятную страну, регион, город и степень уверенности (в процентах) с перечислением невязок."
+  },
+  {
+    "title": "WHOIS & Domain Infrastructure Pivot (OSINT)",
+    "description": "Исследование доменного имени, сетевой инфраструктуры, IP-адресов и связанных интернет-активов.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "whois",
+      "domain",
+      "network",
+      "cyber-intelligence",
+      "ru"
+    ],
+    "prompt_text": "# Анализ домена и сетевой инфраструктуры (WHOIS & DNS OSINT)\n\n## Роль\nВы — аналитик киберразведки (Threat Intelligence) и OSINT-исследователь сетевой инфраструктуры.\n\n## Задача\nПроанализируйте следующий домен, IP-адрес или результат WHOIS-запроса:\n\"[ВСТАВЬТЕ ДОМЕН, IP ИЛИ WHOIS ТЕКСТ]\"\n\n## План исследования\n1. **Извлечение сетевых индикаторов (IOCs)**:\n   - Registrant Org / Email / Phone (актуальные и исторические данные).\n   - Authoritative Name Servers (NS), MX-записи, A/AAAA, TXT (SPF/DKIM/DMARC).\n   - SSL/TLS Сертификаты (Subject Alternative Names, Issuer, Certificate Transparency logs).\n2. **Стратегия связи и поиск аффилированных доменов (Pivoting)**:\n   - Поиск других доменов на том же IP / ASN.\n   - Reverse WHOIS по email или имени регистратора.\n   - Сравнение фавиконок (Favicon Hash / Shodan mmh3) и уникальных скриптов Google Analytics (UA-XXXXX) / Google Tag Manager.\n3. **Рекомендуемые инструменты**:\n   - Укажите команды и сервисы для дальнейшей проверки (Shodan, Censys, SecurityTrails, VirusTotal, Wayback Machine).\n4. **Итоговая матрица**: Сводная таблица найденных ресурсов и потенциальных точек отказа/уязвимостей."
+  },
+  {
+    "title": "Digital Footprint & SOCMINT Profile Analysis",
+    "description": "Оценка публичного цифрового следа в соцсетях и открытых профилях с выявлением взаимосвязей.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "socmint",
+      "social-media",
+      "digital-footprint",
+      "profiling",
+      "ru"
+    ],
+    "prompt_text": "# Анализ цифрового следа и профиля в социальных сетях (SOCMINT)\n\n## Роль\nВы — эксперт по разведке в социальных сетях (SOCMINT) и оценке цифровых следов.\n\n## Ограничение\nАнализ проводится исключительно по открытым (публичным) данным в рамках этических норм OSINT.\n\n## Входные данные\nНикнейм / Имя / Ссылки на публичные профили:\n\"[ВСТАВЬТЕ НИКНЕЙМ ИЛИ ПУБЛИЧНЫЕ ДАННЫЕ]\"\n\n## Протокол SOCMINT-анализа\n1. **Кросс-платформенный поиск никнейма**:\n   - Предложите шаблоны поиска уникального хэндла на платформах (GitHub, Telegram, Reddit, LinkedIn, X/Twitter, Steam, профильные форумы).\n2. **Временной и географический паттерн активности**:\n   - Выявление часового пояса по времени публикаций.\n   - Анализ упоминаний локаций, мероприятий, языковых особенностей.\n3. **Сеть связей (Social Graph)**:\n   - Выявление ключевых контактов, подписок, упоминаний и общих сообществ.\n4. **Сводный отчёт риска**: Сводка публикаций, содержащих потенциально чувствительную информацию (PDR / OSEC риски)."
+  },
+  {
+    "title": "Deepfake & Synthetic Media Verification",
+    "description": "Аудит аудио, видео и фотоматериалов на предмет генерации ИИ, монтажа и дипфейк-манипуляций.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "deepfake",
+      "ai-detection",
+      "media-verification",
+      "synthetic-media",
+      "ru"
+    ],
+    "prompt_text": "# Верификация дипфейков и синтетического контента (Media Forensics)\n\n## Роль\nВы — судебный медиа-эксперт и специалист по выявления подделок (Digital Forensics & Media Verification).\n\n## Задача\nОцените медиафайл / описание артефактов на предмет генерации с помощью AI или цифрового манипулирования:\n\"[ОПИШИТЕ МЕДИАФАЙЛ ИЛИ АРТЕФАКТЫ]\"\n\n## Чек-лист проверки дипфейков\n1. **Визуальные и анатомические артефакты**:\n   - Неестественное мигание глаз, границы размытия кожи, несимметричные зубы и мочки ушей.\n   - Артефакты волос, несоответствие текстуры одежды и фона при движении головы.\n2. **Физика освещения и отражений**:\n   - Несоответствие бликов в зрачках (Catchlight) направлению источника света.\n   - Неправильные тени от объекта или градиенты размытия фона (Depth of Field).\n3. **Аудио-визуальная синхронизация**:\n   - Несовпадение артикуляции губ и фонематического звучания речи.\n4. **Инструментальная верификация**:\n   - Назовите специнструменты для анализа (InVID / WeVerify, FotoForensics ELA, Hive Moderation, метаданные EXIF/C2PA)."
+  },
+  {
+    "title": "Corporate Intelligence & Company Verification",
+    "description": "Комплексный аудит юридических лиц, структуры собственности, реестров и финансовых взаимосвязей.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "corporate",
+      "due-diligence",
+      "registry",
+      "company",
+      "ru"
+    ],
+    "prompt_text": "# Корпоративная разведка и проверка юридических лиц (Due Diligence)\n\n## Роль\nВы — аналитик корпоративной разведки (Corporate OSINT & Due Diligence).\n\n## Входные данные\nНазвание компании, ИНН / Registration Number, Юрисдикция:\n\"[ВСТАВЬТЕ ДАННЫЕ О КОМПАНИИ]\"\n\n## План проверки\n1. **Анализ официальных реестров**:\n   - Регистрационные данные, дата создания, уставный капитал, статус (активна/в процессе ликвидации).\n   - Учредители, конечные бенефициарные владельцы (UBO), генеральный директор.\n2. **Сеть аффилированных структур**:\n   - Дочерние компании, филиалы, пересечения по адресам массовой регистрации.\n3. **Финансовая и судебная история**:\n   - Участие в судебных делах (истец/ответчик), задолженности по налогам, государственные контракты.\n4. **Цифровой след компании**:\n   - Доменное имя, корпоративная почта, товарные знаки, патенты, вакансии (для оценки стека технологий).\n5. **Матрица рисков (Red Flags)**: Массовый директор, частая смена юрисдикции, отсутствие реальной деятельности."
+  },
+  {
+    "title": "Media Bias & Narrative Disinformation Mapping",
+    "description": "Выявление предвзятости, нарративов дезинформации и логических манипуляций в публикациях.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "disinformation",
+      "media-bias",
+      "narratives",
+      "fake-news",
+      "ru"
+    ],
+    "prompt_text": "# Картирование нарративов дезинформации и предвзятости СМИ\n\n## Роль\nВы — исследователь медиапространства и дезинформационных кампаний (Information Warfare & Disinformation Analyst).\n\n## Материал для анализа\n\"[ВСТАВЬТЕ ТЕКСТ СТАТЬИ ИЛИ СЕРИИ ПУБЛИКАЦИЙ]\"\n\n## Алгоритм анализа нарративов\n1. **Идентификация главного нарратива**: Какое ключевое убеждение или эмоциональную эмоцию авторы пытаются внушить читателю?\n2. **Анализ фрейминга и контекста**: Что из важного контекста вырезано или умолчано (Cherry-picking)?\n3. **Связь с координированными кампаниями**: Наблюдаются ли признаки координированного неаутентичного поведения (Coordinated Inauthentic Behavior - CIB)?\n4. **Анализ источников**: Опираются ли тезисы на анонимные \"источники в ведомстве\", экспертов без имени или авторитетные исследования?\n5. **Итоговый граф нарратива**: Краткое резюме манипуляции с указанием целевой аудитории."
+  },
+  {
+    "title": "Cross-Border Fact Verification Protocol",
+    "description": "Методика сопоставления новостей в международных источниках и поиска первоисточника.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "cross-checking",
+      "news-verification",
+      "sources",
+      "international",
+      "ru"
+    ],
+    "prompt_text": "# Протокол международной кросс-проверки новостей и первоисточников\n\n## Роль\nВы — шеф-редактор службы фактчекинга международного информационного агентства.\n\n## Событие / Новость\n\"[ВСТАВЬТЕ ОПИСАНИЕ СОБЫТИЯ ИЛИ НОВОСТНОЙ ЗАГОЛОВОК]\"\n\n## Протокол верификации\n1. **Поиск первоисточника (Primary Source)**:\n   - Как данная новость звучит на языке оригинала (в стране где произошло событие)?\n   - Содержит ли первоисточник официальный пресс-релиз, документ или видеоподтверждение?\n2. **Сравнительный анализ освещения**:\n   - Сравните подачу новости в 3 мировых СМИ из разных регионов (например, Reuters/AP, местное национальное агентство, независимые расследователи).\n3. **Временная хронология (Timeline)**:\n   - Восстановите точное время первого появления информации в соцсетях/мессенджерах (Telegram, X, Reddit).\n4. **Карта расхождений**: Таблица отличий в фактах, цифрах и цитатах между разными версиями."
+  },
+  {
+    "title": "Data Breach & Credential Leak Triage (OSINT)",
+    "description": "Оценка риска компрометации учетных данных и проверка по открытым базам утечек.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "leaks",
+      "breach-triage",
+      "credentials",
+      "cybersecurity",
+      "ru"
+    ],
+    "prompt_text": "# Трипаж утечек данных и компрометации (Breach Intelligence)\n\n## Роль\nВы — аналитик кибербезопасности и специалистов по OSINT-мониторингу утечек.\n\n## Задача\nОцените потенциальный риск компрометации корпоративного домена или адреса электронной почты:\n\"[ВСТАВЬТЕ ДОМЕН ИЛИ МАСКУ ПОЧТЫ]\"\n\n## План триажа\n1. **Проверка по базам утечек**:\n   - Предложите легальные сервисы для проверки (HaveIBeenPwned, DeHashed, BreachDirectory).\n2. **Анализ вектора утечки**:\n   - Какие типы данных чаще всего утекают (хэши паролей, хеши SHA-1/MD5, Plaintext, 2FA токены, PII данные)?\n3. **Оценка критичности (Severity Rating)**:\n   - Рассчитайте уровень риска по шкале 1-10 с учетом повторного использования паролей (Credential Stuffing).\n4. **Рекомендации по нейтрализации**:\n   - Шаги по сбросу сессий, внедрению FIDO2/Passkeys и замене скомпрометированных ключей."
+  },
+  {
+    "title": "Chronolocation & Shadow Calculation Protocol",
+    "description": "Расчет точной даты и времени съемки по длине и направлению теней с использованием геолокации.",
+    "category": "osint",
+    "tags": [
+      "osint",
+      "chronolocation",
+      "shadows",
+      "sun-calc",
+      "time-verification",
+      "ru"
+    ],
+    "prompt_text": "# Хронолокация и расчет времени по теням (Chronolocation Protocol)\n\n## Роль\nВы — геопространственный аналитик, специализирующийся на хронолокации и астрономическом расчете теней.\n\n## Входные данные\nКоординаты места (широта, долгота) и описание теней на фото:\n\"[ВСТАВЬТЕ КООРДИНАТЫ И ОПИСАНИЕ ТЕНЕЙ / ОРИЕНТАЦИЮ ЗДАНИЯ]\"\n\n## Алгоритм хронолокации\n1. **Определение азимута и высоты солнца**:\n   - Измерьте направление тени относительно истинного севера.\n   - Вычислите соотношение высоты объекта к длине тени для определения угла солнца над горизонтом ($tan(\\theta)$).\n2. **Моделирование движения солнца (SunCalc)**:\n   - Ограничьте возможный диапазон дат и времени суток для указанных координат.\n3. **Учет дополнительных факторов**:\n   - Сезонные изменения растительности, наличие снежного покрова, характер освещения.\n4. **Итоговый временной интервал**: Укажите вероятное окно времени (например, 14:15 - 14:45 UTC) и погрешность."
+  },
+  {
+    "title": "Python Textual App & TCSS Layout Generator",
+    "description": "Разработка полнофункционального TUI-приложения на Python Textual с асинхронными виджетами, CSS-стилями (TCSS) и реактивным состоянием.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "python",
+      "textual",
+      "tcss",
+      "async",
+      "ru"
+    ],
+    "prompt_text": "# Архитектор TUI-приложений на Python (Textual & TCSS)\n\n## Роль\nВы — Senior Python Engineer и специалист по разработке терминальных интерфейсов на фреймворке Textual.\n\n## Задача\nСоздайте полноценный TUI-интерфейс для приложения:\n\"[ОПИСАНИЕ ПРИЛОЖЕНИЯ / НАЗНАЧЕНИЕ, НАПР. ДАШБОРД МОНИТОРИНГА СЕРВЕРОВ]\"\n\n## Требования к коду\n1. **Архитектура Textual**:\n   - Наследуйтесь от `App` и используйте асинхронные методы (`async def on_mount`, `async def on_button_pressed`):\n   - Используйте реактивные переменные (`reactive`) для автоматического обновления UI при изменении состояния.\n   - Разделите логику на переиспользуемые виджеты (`Widget`, `Static`, `Button`, `DataTable`, `Tree`, `Input`).\n2. **Стилизация (TCSS - Textual CSS)**:\n   - Создайте чистый блок TCSS (Grid / Flexbox), определите псевдоклассы (`:hover`, `:focus`, `:disabled`).\n   - Используйте встроенные цветовые переменные (`$accent`, `$primary`, `$surface`).\n3. **Обработка горячих клавиш (Keybindings)**:\n   - Добавьте список `BINDINGS = [Binding(\"q\", \"quit\", \"Quit\"), Binding(\"d\", \"toggle_dark\", \"Toggle Dark Mode\")]`.\n4. **Обработка ошибок**: Изолируйте асинхронные фоновые задачи через `self.run_worker()`.\n\n## Формат ответа\nПредоставьте готовый к запуску модуль Python с чистым TCSS-стилем и инструкциями по запуску."
+  },
+  {
+    "title": "Go Bubble Tea & Lip Gloss TUI App (The Elm Architecture)",
+    "description": "Создание интерактивного TUI-приложения на Go с архитектурой Elm (Model-Update-View), стилями Lip Gloss и компонентов Bubbles.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "go",
+      "bubble-tea",
+      "lip-gloss",
+      "elm-architecture",
+      "ru"
+    ],
+    "prompt_text": "# Архитектор TUI-приложений на Go (Bubble Tea & Lip Gloss)\n\n## Роль\nВы — Principal Go Engineer и эксперт по экосистеме Charm (Bubble Tea, Lip Gloss, Bubbles).\n\n## Задача\nРазработайте терминальное приложение на Go со следующей функциональностью:\n\"[ОПИСАНИЕ ИНТЕРФЕЙСА, НАПР. CLI МЕНЕДЖЕР ЗАДАЧ ИЛИ GIT CLIENT]\"\n\n## Требования к реализации\n1. **Архитектура The Elm Architecture (TEA)**:\n   - Определите структуру `model` со всеми полями состояния.\n   - Реализуйте метод `Init() tea.Cmd` для начальных команд и асинхронной загрузки.\n   - Реализуйте метод `Update(msg tea.Msg) (tea.Model, tea.Cmd)` с чистым сопоставлением сообщений (`tea.KeyMsg`, `tea.WindowSizeMsg`, кастомные `tea.Cmd`).\n   - Реализуйте метод `View() string` для отрисовки UI.\n2. **Стилизация через Lip Gloss**:\n   - Используйте `lipgloss.NewStyle()` для рамки (`Border(lipgloss.RoundedBorder())`), отступов (`Padding`), цвета фона и текста (`Foreground/Background`).\n   - Применяйте `lipgloss.JoinHorizontal` и `lipgloss.JoinVertical` для верстки многопанельных макетов.\n3. **Интеграция Bubbles**:\n   - Используйте готовые компоненты из `github.com/charmbracelet/bubbles` (`spinner`, `textinput`, `list`, `table`, `progress`).\n\n## Формат ответа\nПредоставьте полный компилируемый `main.go` с понятной структурой и обработкой выхода по `Ctrl+C` / `q` logic."
+  },
+  {
+    "title": "Rust Ratatui High-Performance Terminal Dashboard",
+    "description": "Создание высокопроизводительного TUI-интерфейса на Rust с библиотекой Ratatui, Crossterm и кастомным циклом обработки событий.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "rust",
+      "ratatui",
+      "crossterm",
+      "performance",
+      "ru"
+    ],
+    "prompt_text": "# Разработчик высокопроизводительных TUI на Rust (Ratatui & Crossterm)\n\n## Роль\nВы — Systems Rust Architect и эксперт по низкоуровневой графике в терминале с использованием библиотеки Ratatui.\n\n## Задача\nСоздайте производительный Terminal Dashboard на Rust:\n\"[ОПИСАНИЕ ДАШБОРДА, НАПР. СИСТЕМНЫЙ МОНИТОР CPU/RAM/NETWORK]\"\n\n## Архитектурные требования\n1. **Инициализация терминала (Crossterm backend)**:\n   - Переключение терминала в Raw Mode (`terminal::enable_raw_mode()`).\n   - Вход в альтернативный экран (`EnterAlternateScreen`) и захват мыши при необходимости.\n   - Гарантированный восстановитель состояния терминала при панике/выходе (RAII / `Drop` guard).\n2. **Цикл обработки событий (Event Loop)**:\n   - Обработка событий в отдельном потоке или через `tokio::select!` (события клавиатуры `crossterm::event::read()` + тики таймера).\n3. **Компоновка UI (Ratatui Layout & Widgets)**:\n   - Использование `Layout::default().direction(...).constraints([...])` для гибкой разметки.\n   - Виджеты: `Block`, `Paragraph`, `BarChart`, `Gauge`, `Sparkline`, `Table`.\n4. **Zero-allocation & Safety**:\n   - Избегайте лишних аллокаций памяти внутри функции `draw()`.\n\n## Формат ответа\nПредоставьте полный файл `main.rs` и `Cargo.toml` с подробными комментариями."
+  },
+  {
+    "title": "Node.js & React Ink Modern TUI Application",
+    "description": "Построение декларативного терминального интерфейса на Node.js с использованием React Ink, Yoga Flexbox и хуков состояния.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "nodejs",
+      "react",
+      "ink",
+      "flexbox",
+      "ru"
+    ],
+    "prompt_text": "# React Ink TUI Developer (Node.js & TypeScript)\n\n## Роль\nВы — Senior Full-Stack / Node.js разработчик, специализирующийся на создании декларативных CLI/TUI интерфейсов с библиотекой Ink (React for CLI).\n\n## Задача\nРазработайте терминальное React-приложение на Ink:\n\"[ОПИСАНИЕ ИНТЕРФЕЙСА, НАПР. ИНТЕРАКТИВНЫЙ WIZARD СБОРКИ ПРОЕКТА]\"\n\n## Требования к коду\n1. **Декларативные компоненты Ink**:\n   - Используйте стандартные компоненты Ink: `<Box>`, `<Text>`, `<Newline>`, `<Transform>`.\n   - Верстка через Flexbox свойства: `flexDirection=\"column\"`, `justifyContent=\"space-between\"`, `padding={1}`, `borderStyle=\"round\"`.\n2. **Интерактивность и хуки**:\n   - Используйте `useInput((input, key) => { ... })` для обработки клавиш.\n   - Используйте `useApp()` для программного завершения приложения (`exit()`).\n   - Используйте сопутствующие компоненты: `ink-spinner`, `ink-select-input`, `ink-text-input`, `ink-big-text`.\n3. **TypeScript**: Строгие типы Props и состояния компонентов.\n\n## Формат ответа\nПредоставьте код компонента на TypeScript (React Ink) с инструкцией по запуску через `npx tsx app.tsx` или `ink-build`."
+  },
+  {
+    "title": "Python Rich & Prompt Toolkit Interactive Console",
+    "description": "Разработка интерактивной консоли с форматированными таблицами, прогресс-барами, автодополнением и деревовидными структурами.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "python",
+      "rich",
+      "prompt-toolkit",
+      "cli",
+      "ru"
+    ],
+    "prompt_text": "# Эксперт по Python Rich & Prompt Toolkit\n\n## Роль\nВы — эксперт по консольной визуализации и созданию REPL-интерфейсов на Python с использованием библиотек Rich и Prompt Toolkit.\n\n## Задача\nСоздайте интерактивную консольную утилиту:\n\"[ОПИСАНИЕ ЗАДАЧИ, НАПР. REPL ДЛЯ УПРАВЛЕНИЯ BUCKET-АМИ GCS / S3]\"\n\n## Требования к реализации\n1. **Визуализация через Rich**:\n   - Красивый вывод с использованием `Console()`, `Table`, `Tree`, `Panel`, `Progress`, `Syntax` подсветки кода.\n   - Создание кастомного макета `Layout` (Header, Footer, Main Body, Sidebar).\n2. **Интерактивный ввод через Prompt Toolkit**:\n   - Реализация `PromptSession` с автодополнением (`Completer` / `FuzzyCompleter`).\n   - Поддержка истории команд (`FileHistory`), подсветка синтаксиса на лету (`PygmentsLexer`).\n   - Подсказки над строкой ввода (Bottom Toolbar).\n3. **Эстетика**: Выравнивание элементов, стилевая схема (Rich Style Theme) и статус-бар операций.\n\n## Формат ответа\nПредоставьте готовый скрипт Python с примерами данных."
+  },
+  {
+    "title": "Go Tview Multi-Pane Dashboard & Form System",
+    "description": "Построение сложного многопанельного сетчатого интерфейса (Flex/Grid) с формами, модальными окнами и списками на Go tview.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "go",
+      "tview",
+      "dashboard",
+      "modals",
+      "ru"
+    ],
+    "prompt_text": "# Инженер TUI-интерфейсов на Go (tview & tcell)\n\n## Роль\nВы — Go TUI Инженер, специализирующийся на библиотеке `tview` (на базе `tcell`) для построения словарных и бизнес-интерфейсов.\n\n## Задача\nРазработайте многопанельное TUI-приложение:\n\"[ОПИСАНИЕ ИНТЕРФЕЙСА, НАПР. TUI КЛИЕНТ БАЗ ДАННЫХ С ТАБЛИЦАМИ И ФОРМОЙ СВЕДЕНИЙ]\"\n\n## Архитектура tview\n1. **Макет (Layout)**:\n   - Использование `tview.NewFlex()` и `tview.NewGrid()` для разбиения экрана на панели.\n   - Компоненты: `tview.NewTable()`, `tview.NewForm()`, `tview.NewTextView()`, `tview.NewList()`, `tview.NewTreeNode()`.\n2. **Переключение фокуса и навигация**:\n   - Настройка `app.SetFocus(primitive)` при нажатии `Tab` / `Shift+Tab` или горячих клавиш.\n   - Поддержка модальных окон поверх основного макета (`tview.NewModal()`).\n3. **Динамическое обновление**:\n   - Безопасное обновление UI из фоновых горутин через `app.QueueUpdateDraw(func() { ... })`.\n\n## Формат ответа\nПредоставьте рабочий исходный код на Go с обработкой навигации по кнопкам."
+  },
+  {
+    "title": "Node.js Blessed & Blessed-Contrib Monitoring Dashboard",
+    "description": "Создание терминального дашборда мониторинга ресурсов в реальном времени с графиками, спарклайнами и логами на Blessed.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "nodejs",
+      "blessed",
+      "blessed-contrib",
+      "monitoring",
+      "ru"
+    ],
+    "prompt_text": "# Разработчик терминальных дашбордов на Node.js (Blessed & Blessed-Contrib)\n\n## Роль\nВы — Node.js TUI Specialist, эксперт по созданию графических терминальных дашбордов с помощью библиотек `blessed` и `blessed-contrib`.\n\n## Задача\nПостройте мониторинговый дашборд реального времени:\n\"[ОПИСАНИЕ МОНИТОРА, НАПР. ДАШБОРД МЕТРИК KUBERNETES КЛАСТЕРА]\"\n\n## Архитектура Blessed\n1. **Экран и сетка Grid**:\n   - Инициализация `blessed.screen({ smartCSR: true, title: \"...\" })`.\n   - Использование `contrib.grid({ rows: 12, cols: 12, screen: screen })`.\n2. **Интерактивные виджеты**:\n   - `contrib.line` для графиков метрик в реальном времени.\n   - `contrib.gauge` или `contrib.donut` для нагрузки CPU/Памяти.\n   - `contrib.log` для потоковых логов.\n   - `blessed.table` для списка процессов/подов.\n3. **Обработка событий**:\n   - Закрытие по `q` или `Ctrl+C` (`screen.key([q, C-c], ...)`).\n   - Автоматический перерасчет размеров при изменении окна терминала (`screen.on(resize, ...)`).\n\n## Формат ответа\nПредоставьте полный скрипт Node.js с эмуляцией периодического обновления данных."
+  },
+  {
+    "title": "C/C++ Ncurses Low-Level Interactive Terminal UI",
+    "description": "Низкоуровневое TUI-приложение на C/C++ с использованием ncurses/ncursesw: окна, панельная система, мышь и цветные пары.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "c",
+      "cpp",
+      "ncurses",
+      "low-level",
+      "ru"
+    ],
+    "prompt_text": "# Эксперт по низкоуровневым TUI на C/C++ (ncurses & CDK)\n\n## Роль\nВы — Senior C/C++ Systems Engineer, мастер низкоуровневой работы с терминалом через `ncurses` (`ncursesw` для Юникода).\n\n## Задача\nНапишите TUI-приложение на C/C++:\n\"[ОПИСАНИЕ ТЕРМИНАЛЬНОГО ИНТЕРФЕЙСА, НАПР. ФАЙЛОВЫЙ МЕНЕДЖЕР В СТИЛЕ FAR / MC]\"\n\n## Требования к коду на C/C++\n1. **Инициализация ncurses**:\n   - `initscr()`, `cbreak()`, `noecho()`, `keypad(stdscr, TRUE)`, `curs_set(0)`.\n   - Проверка поддержки цвета `has_colors()`, `start_color()`, инициализация цветовых пар (`init_pair(1, COLOR_RED, COLOR_BLACK)`).\n2. **Управление окнами (WINDOW*)**:\n   - Создание под-окон через `newwin(height, width, starty, startx)`.\n   - Отрисовка рамок `box(win, 0, 0)` и обновление экрана `wrefresh(win)` / `doupdate()`.\n3. **Поддержка Юникода и Мыши**:\n   - Корректная обработка UTF-8 строк (`wchar_t`, `waddwstr`).\n   - Обработка кликов мыши через `mousemask(ALL_MOUSE_EVENTS, NULL)`.\n4. **Очистка ресурсов**: Корректный вызов `endwin()` перед завершением программы.\n\n## Формат ответа\nПредоставьте код на C/C++ и команду сборки (`gcc -lncursesw` / `g++`)."
+  },
+  {
+    "title": "TUI Universal Focus & Hotkey Controller Pattern",
+    "description": "Паттерн управления фокусом элементов, обработкой горячих клавиш (Keybindings) и системными шорткатами в TUI.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "keybindings",
+      "focus-management",
+      "hotkeys",
+      "navigation",
+      "ru"
+    ],
+    "prompt_text": "# Архитектурный паттерн: Управление фокусом и горячими клавишами в TUI\n\n## Роль\nВы — Lead TUI UX Architect. Ваша задача — спроектировать чистый, масштабируемый паттерн навигации фокуса и горячих клавиш для TUI-приложения.\n\n## Проблема\nВ сложных TUI-приложениях с десятками панелей навигация клавишами (Tab, Shift+Tab, Стрелки, Hjkl) часто превращается в запутанную лапшу \"spaghetti code\".\n\n## Ваше решение должно включать\n1. **Менеджер фокуса (Focus Manager / Chain of Responsibility)**:\n   - Дерево или стек фокуса с явной регистрацией фокусируемых элементов (`Focusable`).\n   - Визуальный индикатор активного фокуса (изменение цвета рамки, заголовка или курсора).\n2. **Диспетчер горячих клавиш (Hotkey Registry & Context Matrix)**:\n   - Глобальные шорткаты (например, `Ctrl+Q` для выхода, `F1` для справки).\n   - Контекстные шорткаты (например, в таблице `j/k` — движение по строкам, в редактировании текста — вводе текста).\n   - Подсказка по горячим клавишам в подвале экрана (Bottom Keymap Bar), которая автоматически обновляется при смене фокуса.\n\n## Формат ответа\nПредоставьте архитектуру и шаблон кода с реализацией на вашем выборном языке (Python/Go/Rust/TS)."
+  },
+  {
+    "title": "TUI Live Streaming Log Viewer & Process Monitor",
+    "description": "Создание компонента реального времени для потоковой трансляции логов, подсвечивания ошибок и мониторинга фоновых процессов.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "logs",
+      "streaming",
+      "process-monitor",
+      "realtime",
+      "ru"
+    ],
+    "prompt_text": "# TUI-компонент: Потоковый просмотрщик логов и мониторинг процессов (Real-time Streaming Log Viewer)\n\n## Роль\nВы — TUI Performance Specialist.\n\n## Задача\nСпроектируйте высокопроизводительный TUI-компонент для отображения логов реального времени (Streaming Tail) с возможностью паузы, фильтрации и цветового выделения уровней логов (INFO, WARN, ERROR, FATAL).\n\n## Ключевые фичи компонента\n1. **Кольцевой буфер (Ring Buffer / Bounded Memory)**:\n   - Хранение последних N тысяч строк логов без переполнения оперативной памяти.\n2. **Умный автоскролл (Smart Auto-Scroll)**:\n   - Если пользователь в самом низу — автоскролл при поступлении новых логов включен.\n   - Если пользователь прокрутил вверх — автоскролл приостанавливается, появляется индикатор \"[SCROLL LOCKED - PRESS END TO RESUME]\".\n3. **Фильтрация и Regex-подсветка на лету**:\n   - Текстовое поле ввода для живой фильтрации (например, `level:error service:auth`):\n   - Подсветка временных меток, IP-адресов, стектрейсов и статусов ответа.\n\n## Формат ответа\nПредоставьте готовую реализацию компонента с инструкциями по обработке больших объемов логов."
+  },
+  {
+    "title": "TUI Command Palette & Fuzzy Finder Overlay",
+    "description": "Разработка всплывающего модального окна командной палитры (Ctrl+P / Cmd+K) с нечетким поиском (Fuzzy Finder).",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "command-palette",
+      "fuzzy-finder",
+      "modal",
+      "search",
+      "ru"
+    ],
+    "prompt_text": "# TUI Палитры команд и Fuzzy Search (Command Palette & Modal Overlay)\n\n## Роль\nВы — TUI UI/UX Expert.\n\n## Задача\nСоздайте модель всплывающей командной палитры (аналог Ctrl+P / Cmd+K в VS Code или Sublime) для терминального интерфейса.\n\n## Функционал командной палитры\n1. **Модальное перекрытие (Modal Overlay / Z-Index)**:\n   - Отрисовка по центру экрана поверх основного TUI-интерфейса с затемнением или размытием фоновых панелей.\n2. **Алгоритм нечеткого поиска (Fuzzy Search Matching)**:\n   - Нечеткое сопоставление символов по мере ввода (например, ввод `gfc` находит `Git: Fetch Changes`):\n   - Подсветка совпавших букв в названии команды.\n3. **Выполнение действия (Action Dispatcher)**:\n   - Нажатие `Enter` выполняет привязанную функцию (`callback`) и закрывает палитру.\n   - Нажатие `Esc` закрывает палитру без изменений.\n\n## Формат ответа\nПредоставьте реализацию виджета Command Palette с массивом доступных команд."
+  },
+  {
+    "title": "TUI Design System: Themes, ASCII Art & Unicode Styling",
+    "description": "Создание единой дизайн-системы для TUI: цветовые палитры (TrueColor / 256), символы Unicode/NerdFonts, градиенты и рамочные стили.",
+    "category": "tui",
+    "tags": [
+      "tui",
+      "design-system",
+      "themes",
+      "unicode",
+      "nerdfonts",
+      "styling",
+      "ru"
+    ],
+    "prompt_text": "# Дизайн-система и темы для TUI (TrueColor, Nerd Fonts & Unicode UX)\n\n## Роль\nВы — Lead TUI Visual Designer & Theme Architect.\n\n## Задача\nРазработайте единую дизайн-систему для терминального интерфейса с поддержкой тем оформления (Dark Catppuccin, Nord, Tokyo Night, Gruvbox, Monokai) и красивой символьной графики.\n\n## Составляющие дизайн-системы\n1. **Цветовая палитра (TrueColor 24-bit & Fallback 256/16 colors)**:\n   - Набор семантических токенов: `Primary`, `Secondary`, `Success`, `Warning`, `Error`, `Background`, `Surface`, `Border`.\n   - Алгоритм авто-определения поддержки TrueColor в терминале (`COLORTERM=truecolor`) и фоллбэка на 256/16 цветов.\n2. **Символьный сет (Unicode & Nerd Fonts Icons)**:\n   - Рамки: одинарные (`┌─┐`), двойные (`╔═╗`), скругленные (`╭─╮`), жирные (`┏━┓`).\n   - Индикаторы статусов, иконки папок, файлов, процессов и списков из Nerd Fonts (с фоллбэком на стандартный ASCII при отсутствии шрифта).\n3. **Градиенты и ASCII баннеры**:\n   - Эффектный ASCII-логотип приложения при старте с градиентной заливкой текста.\n\n## Формат ответа\nПредоставьте спецификацию дизайн-системы и готовый модуль тем оформления на вашем предпочтительном языке."
+  },
+  {
+    "title": "Full Website Security Audit (OWASP Top 10:2025)",
+    "description": "Комплексный аудит сайта по OWASP Top 10:2025: access control, misconfig, supply chain, crypto, injection, design, auth, integrity, logging, exceptions.",
+    "category": "security",
+    "prompt_text": "# Аудитор безопасности веб-приложений (OWASP Top 10:2025)\n\n## Роль\nВы — Lead Application Security Engineer и пентестер. Ваша задача — провести структурированный аудит защиты сайта/веб-приложения и выдать приоритизированный отчёт с remediation.\n\n## Объект проверки\nURL / описание приложения / стек / ограничения scope:\n\"[ВСТАВЬТЕ URL, ОПИСАНИЕ ФУНКЦИЙ, СТЕК И SCOPE]\"\n\n## Протокол аудита (OWASP Top 10:2025)\n1. **A01 Broken Access Control** — IDOR, horizontal/vertical privilege escalation, missing function-level checks, CORS misconfig, force-browsing.\n2. **A02 Security Misconfiguration** — default credentials, verbose errors, unnecessary services, insecure cloud/storage ACLs, missing hardening.\n3. **A03 Software Supply Chain Failures** — outdated deps, compromised packages, CI/CD secrets, unsigned artifacts, SBOM gaps.\n4. **A04 Cryptographic Failures** — weak TLS, insecure storage of secrets/PII, weak hashing, missing encryption at rest/in transit.\n5. **A05 Injection** — SQLi, XSS, command injection, template/LDAP/NoSQL injection; input validation vs output encoding.\n6. **A06 Insecure Design** — missing threat model, weak business-logic controls, abuse cases not covered.\n7. **A07 Authentication Failures** — weak passwords, missing MFA, session fixation, credential stuffing exposure.\n8. **A08 Software or Data Integrity Failures** — unsigned updates, insecure deserialization, CI integrity, untrusted plugins.\n9. **A09 Security Logging and Alerting Failures** — no audit trail for authz failures, no alerting, logs without integrity.\n10. **A10 Mishandling of Exceptional Conditions** — error handling that leaks data, fail-open security controls, race conditions.\n\n## Формат ответа\nMarkdown-отчёт:\n- Executive summary + risk score (0–100)\n- Findings table: ID | Severity (Critical/High/Medium/Low) | OWASP category | Evidence | Impact | Remediation | Effort\n- Top-5 quick wins (≤1 day each)\n- Recommended retest checklist\n- Legal note: only test systems you own or have written authorization for",
+    "tags": [
+      "security",
+      "owasp",
+      "audit",
+      "website",
+      "pentest-plan",
+      "ru"
+    ]
+  },
+  {
+    "title": "HTTP Security Headers Audit (CSP, HSTS, COOP)",
+    "description": "Проверка и hardening HTTP security headers: CSP, HSTS, X-Frame-Options, Permissions-Policy, COOP/COEP/CORP, Referrer-Policy.",
+    "category": "security",
+    "prompt_text": "# Аудит HTTP Security Headers\n\n## Роль\nВы — Web Security Engineer, специалист по browser-side defenses и OWASP Secure Headers Project.\n\n## Входные данные\nURL сайта и/или raw HTTP response headers:\n\"[ВСТАВЬТЕ URL ИЛИ ПОЛНЫЙ СПИСОК RESPONSE HEADERS]\"\n\n## Чеклист проверки\nОцените каждый заголовок: Present / Missing / Weak / Dangerous, с рекомендуемым значением.\n\n1. **Content-Security-Policy** — script-src, object-src, base-uri, frame-ancestors; нет `unsafe-inline`/`unsafe-eval` без nonce/hash; report-uri/report-to.\n2. **Strict-Transport-Security** — max-age ≥ 15552000, includeSubDomains, preload readiness.\n3. **X-Content-Type-Options: nosniff**\n4. **X-Frame-Options** vs **CSP frame-ancestors** (предпочтительнее CSP)\n5. **Referrer-Policy** — как минимум `strict-origin-when-cross-origin`\n6. **Permissions-Policy** — отключение ненужных camera/mic/geolocation/payment и т.д.\n7. **Cross-Origin-Opener-Policy / Embedder-Policy / Resource-Policy** — изоляция где нужна\n8. **Cache-Control** для sensitive endpoints (`no-store`)\n9. **Утечки fingerprint**: Server, X-Powered-By, X-AspNet-Version — удалить/обезличить\n10. **Deprecated**: X-XSS-Protection (рекомендация `0` или отсутствие), Expect-CT, HPKP — не использовать\n\n## Формат ответа\n1. Таблица Header | Status | Current value | Recommended | Risk if missing\n2. Готовая CSP (strict + report-only вариант для миграции)\n3. Примеры конфигурации для Nginx, Apache, Cloudflare, Next.js/Vercel headers\n4. План внедрения без поломки сайта (Report-Only → enforce)",
+    "tags": [
+      "security",
+      "headers",
+      "csp",
+      "hsts",
+      "hardening",
+      "ru"
+    ]
+  },
+  {
+    "title": "TLS / HTTPS & Certificate Hardening Review",
+    "description": "Проверка TLS-конфигурации, сертификатов, HSTS preload, mixed content и защиты от downgrade/MITM.",
+    "category": "security",
+    "prompt_text": "# Ревью TLS/HTTPS и сертификатов\n\n## Роль\nВы — Senior Cryptography & Network Security Engineer.\n\n## Объект\nДомен / вывод SSL Labs / openssl s_client / конфиг reverse proxy:\n\"[ВСТАВЬТЕ ДОМЕН ИЛИ РЕЗУЛЬТАТ СКАНА / КОНФИГ]\"\n\n## Протокол проверки\n1. **Протоколы и cipher suites** — отключить SSLv3/TLS1.0/1.1; предпочитать TLS 1.2+ и TLS 1.3; AEAD ciphers (AES-GCM, ChaCha20-Poly1305); perfect forward secrecy.\n2. **Сертификат** — срок, chain completeness, SAN vs CN, CAA DNS records, Certificate Transparency.\n3. **HSTS** — max-age, includeSubDomains, preload list readiness; риск lock-out при ошибке cert.\n4. **Redirect hygiene** — HTTP→HTTPS 301, отсутствие open redirect на HTTPS landing.\n5. **Mixed content** — active/passive mixed content, upgrade-insecure-requests.\n6. **Cookie Secure flag** — cookies только по HTTPS.\n7. **OCSP stapling / revocation** — настройка и мониторинг.\n8. **Certificate pinning** — не рекомендовать HPKP; альтернативы (CT monitoring, CAA).\n9. **Subdomain exposure** — www/api/cdn без HTTPS или со слабым TLS.\n10. **Client-side cert / mTLS** — когда уместно для admin/API.\n\n## Формат ответа\n- Оценка grade (A+…F) с обоснованием\n- Critical misconfigs + exact config snippets (Nginx/Caddy/Cloudflare)\n- Checklist для quarterly re-validation\n- Мониторинг expiry (алерты за 30/14/7 дней)",
+    "tags": [
+      "security",
+      "tls",
+      "https",
+      "ssl",
+      "certificate",
+      "ru"
+    ]
+  },
+  {
+    "title": "Authentication & Session Management Audit",
+    "description": "Аудит входа, сессий, cookies, MFA, password reset, session fixation и credential stuffing defenses.",
+    "category": "security",
+    "prompt_text": "# Аудит аутентификации и управления сессиями\n\n## Роль\nВы — Identity & Access Security specialist (OWASP Authentication / Session Management Cheat Sheets).\n\n## Контекст\nОписание login flow / cookie headers / auth code / API:\n\"[ВСТАВЬТЕ ОПИСАНИЕ AUTH FLOW, SET-COOKIE, JWT ИЛИ КОД]\"\n\n## Области проверки\n1. **Password policy** — длина, blocklist, rate limiting, no composition theatre; secure storage (Argon2id/bcrypt/scrypt).\n2. **Multi-factor** — TOTP/WebAuthn/passkeys; recovery codes; bypass paths.\n3. **Session lifecycle** — regenerate session ID after login; idle/absolute timeout; logout invalidates server-side.\n4. **Cookie flags** — HttpOnly, Secure, SameSite=Lax/Strict, Path/Domain scope, __Host- prefix.\n5. **JWT pitfalls** — alg=none, weak secrets, long-lived access tokens, missing audience/issuer checks, refresh token rotation & reuse detection.\n6. **Password reset / magic links** — single-use, short TTL, no user enumeration, no open redirect.\n7. **Account lockout & brute-force** — progressive delays, CAPTCHA, IP/device risk signals without DoS lockouts.\n8. **Credential stuffing** — HaveIBeenPwned / breach password checks; monitoring.\n9. **Session fixation / hijacking** — TLS-only, binding, concurrent session controls for high-risk apps.\n10. **Remember-me** — separate token, rotatable, revocable.\n\n## Формат ответа\n- Threat matrix (attack → current control → gap → fix)\n- Severity-ranked findings\n- Reference secure cookie + session configuration\n- Test cases for QA/security regression suite",
+    "tags": [
+      "security",
+      "auth",
+      "session",
+      "cookies",
+      "mfa",
+      "ru"
+    ]
+  },
+  {
+    "title": "Broken Access Control & IDOR Testing Plan",
+    "description": "План и методика проверки Broken Access Control: IDOR, privilege escalation, mass assignment, forced browsing.",
+    "category": "security",
+    "prompt_text": "# Тестирование Broken Access Control & IDOR\n\n## Роль\nВы — Senior Penetration Tester, фокус на authorization flaws (OWASP A01:2025).\n\n## Приложение\nРоли пользователей, endpoints, объекты данных:\n\"[ОПИШИТЕ РОЛИ, API/URL, РЕСУРСЫ (user_id, order_id, org_id…)]\"\n\n## Методика\n1. **Карта ролей** — anonymous / user / admin / support; matrix: Role × Action × Resource.\n2. **Horizontal IDOR** — подмена object ID на чужой; sequential vs UUID; BOLA in APIs.\n3. **Vertical privilege escalation** — user → admin endpoints; hidden parameters; role claim tampering (JWT).\n4. **Function-level access control** — direct URL to /admin, export, delete, billing.\n5. **Mass assignment / over-posting** — client-controlled role, isAdmin, price, ownerId.\n6. **CORS & cross-tenant** — wildcard origins with credentials; missing tenant isolation.\n7. **Forced browsing & path traversal** — static backups, .git, debug panels.\n8. **State-changing GET** — unsafe methods / CSRF interplay with authz.\n9. **GraphQL/BFF specifics** — field-level auth, batching, introspection abuse.\n10. **Business logic** — multi-step workflows skipping approval steps.\n\n## Формат ответа\n- Access Control Matrix (expected vs actual)\n- Concrete test cases (request/response examples with placeholders)\n- Severity + exploitability + business impact\n- Remediation: central policy enforcement, deny-by-default, object ownership checks, tests as code",
+    "tags": [
+      "security",
+      "access-control",
+      "idor",
+      "authorization",
+      "owasp-a01",
+      "ru"
+    ]
+  },
+  {
+    "title": "Injection & XSS Testing Methodology",
+    "description": "Методика поиска XSS, SQL/NoSQL/command/template injection с приоритизацией и безопасными PoC-описаниями.",
+    "category": "security",
+    "prompt_text": "# Методика тестирования Injection и XSS\n\n## Роль\nВы — Application Security Tester (OWASP A05:2025 Injection + XSS prevention guidance).\n\n## Цель\nСоставить безопасный план проверки injection-векторов для:\n\"[URL / ФОРМЫ / ПАРАМЕТРЫ / СТЕК (React, PHP, Django, Node…)]\"\n\n## Охват\n1. **Reflected / Stored / DOM XSS** — sinks (innerHTML, eval, dangerous React props), sources (query, hash, postMessage).\n2. **SQL injection** — classic, blind boolean/time-based, second-order; ORM pitfalls (raw queries).\n3. **NoSQL / LDAP / XPath / template injection** (SSTI) — признаки и probe strategy.\n4. **OS command / path injection** — file upload + convert tools, shell-outs.\n5. **HTTP parameter pollution / header injection** — CRLF, host header attacks.\n6. **Context-aware encoding** — HTML, attribute, JS, URL, CSS contexts.\n7. **CSP bypass checklist** — if weak CSP present.\n8. **WAF evasion notes (defensive)** — что защитник должен блокировать; без offensive playbook для атаки чужих систем.\n\n## Правила безопасности\n- Только authorized testing.\n- Не генерировать destructive payloads (DROP, ransomware-like XSS).\n- PoC = минимальное harmless доказательство (alert/callback domain controlled by tester).\n\n## Формат ответа\n- Attack surface map (entry points × sinks)\n- Prioritized test cases with expected secure behavior\n- Fix patterns: parameterized queries, output encoding, CSP nonces, sandboxing uploads\n- Regression tests for CI",
+    "tags": [
+      "security",
+      "xss",
+      "injection",
+      "sqli",
+      "owasp-a05",
+      "ru"
+    ]
+  },
+  {
+    "title": "CSRF Protection Verification",
+    "description": "Проверка защиты от CSRF: tokens, SameSite cookies, Fetch Metadata, double-submit, state-changing endpoints.",
+    "category": "security",
+    "prompt_text": "# Верификация защиты от CSRF\n\n## Роль\nВы — Web Application Security Engineer (OWASP CSRF Prevention Cheat Sheet).\n\n## Вход\nОписание state-changing endpoints, cookie auth model, frontend:\n\"[ОПИШИТЕ FORMS/API, AUTH (cookie/session vs Bearer), SAME-SITE НАСТРОЙКИ]\"\n\n## Чеклист\n1. **Inventory** — все state-changing methods (POST/PUT/PATCH/DELETE) и опасные GET.\n2. **Anti-CSRF token** — synchronizer token per session/request; not in URL; validated server-side.\n3. **Double-submit cookie** pattern — корректность и ограничения.\n4. **SameSite cookies** — Lax vs Strict vs None+Secure; login CSRF nuances.\n5. **Fetch Metadata** — Sec-Fetch-Site / Sec-Fetch-Mode policy for cross-site non-safe methods.\n6. **Custom headers** — X-Requested-With / custom header + CORS preflight as defense-in-depth (not sole control).\n7. **CORS credentials** — never `Access-Control-Allow-Origin: *` with credentials.\n8. **JSON APIs** — content-type enforcement application/json; reject text/plain simple requests where applicable.\n9. **Token leakage** — XSS defeats CSRF defenses — link to XSS posture.\n10. **Third-party integrations** — OAuth state/nonce, payment webhooks (HMAC, not CSRF token).\n\n## Формат ответа\n- Risk per endpoint class\n- Recommended defense layers (primary + backup)\n- Example middleware/pseudocode for token validation + Sec-Fetch-Site checks\n- Manual + automated test plan",
+    "tags": [
+      "security",
+      "csrf",
+      "samesite",
+      "cookies",
+      "web",
+      "ru"
+    ]
+  },
+  {
+    "title": "CORS & API Security Review",
+    "description": "Аудит CORS, публичных/приватных API, rate limiting, authn/z API, BOLA/BFLA и exposure sensitive data.",
+    "category": "security",
+    "prompt_text": "# Аудит CORS и безопасности API\n\n## Роль\nВы — API Security Architect (OWASP API Security Top 10 + CORS hardening).\n\n## Объект\nAPI base URL, OpenAPI/Swagger, CORS headers, auth scheme:\n\"[ВСТАВЬТЕ OPENAPI / ПРИМЕРЫ REQUESTS / CORS HEADERS]\"\n\n## Проверки\n1. **CORS policy** — explicit origins (no reflected Origin), methods, headers, max-age; credentials rules.\n2. **Authentication** — OAuth2/OIDC, API keys placement (not in query), mTLS for service-to-service.\n3. **Authorization** — BOLA/BFLA, object-level and function-level checks on every handler.\n4. **Rate limiting & abuse** — per-IP, per-user, per-endpoint; brute-force on auth; pagination limits.\n5. **Input validation** — schema validation, max body size, content-type whitelist.\n6. **Sensitive data exposure** — excessive data in responses, verbose errors, stack traces, PII in logs.\n7. **Mass assignment** on PATCH/PUT.\n8. **GraphQL** — depth/cost limits, disable introspection in prod if needed, field auth.\n9. **Versioning & deprecation** — old vulnerable versions still live.\n10. **Transport** — HTTPS only, HSTS on API domain, no mixed schemes.\n\n## Формат ответа\n- Findings by API Security risk class\n- Secure CORS configuration examples\n- Recommended gateway policies (rate limit, WAF rules high-level, auth)\n- Contract tests for security invariants",
+    "tags": [
+      "security",
+      "cors",
+      "api",
+      "rate-limit",
+      "bola",
+      "ru"
+    ]
+  },
+  {
+    "title": "Security Misconfiguration & Attack Surface Review",
+    "description": "Поиск misconfiguration: debug mode, default secrets, open buckets, exposed admin, backup files, verbose errors.",
+    "category": "security",
+    "prompt_text": "# Ревью Security Misconfiguration и attack surface\n\n## Роль\nВы — Cloud & Web Hardening specialist (OWASP A02:2025 Security Misconfiguration).\n\n## Цель\nИнвентаризация поверхности атаки и misconfig для:\n\"[ДОМЕН / ИНФРА (Vercel/AWS/Nginx) / ENV ОПИСАНИЕ]\"\n\n## Чеклист поверхности\n1. **Information disclosure** — Server banners, stack traces, debug endpoints, source maps in prod.\n2. **Default & weak credentials** — admin panels, DB, message queues, cloud consoles.\n3. **Unnecessary features** — directory listing, TRACE/TRACK, unused HTTP methods, sample apps.\n4. **Exposed artifacts** — /.git, /.env, backup.sql, .DS_Store, phpinfo, actuator, /metrics without auth.\n5. **Cloud storage** — public S3/GCS buckets, world-readable blobs, missing object encryption.\n6. **Admin & staging** — staging indexed by Google, basic auth only, shared secrets.\n7. **Error handling** — generic errors to users; detailed errors only server-side.\n8. **Dependency & runtime defaults** — insecure framework defaults, verbose Django/Rails/Next debug.\n9. **Network exposure** — management ports, Redis/Postgres on 0.0.0.0, missing firewall.\n10. **Security headers & HTTPS** — cross-check with headers/TLS posture.\n\n## Формат ответа\n- Attack surface inventory (assets × exposure × owner)\n- Findings ranked by ease of exploit\n- Hardening baseline (checklist \"production ready\")\n- Monitoring: alerts for new public endpoints / open buckets",
+    "tags": [
+      "security",
+      "misconfiguration",
+      "hardening",
+      "attack-surface",
+      "owasp-a02",
+      "ru"
+    ]
+  },
+  {
+    "title": "Website Hardening & Defense-in-Depth Checklist",
+    "description": "Практический чеклист hardening: WAF, rate limit, logging/alerting, backups, supply chain, incident readiness.",
+    "category": "security",
+    "prompt_text": "# Hardening сайта и defense-in-depth\n\n## Роль\nВы — AppSec Lead, отвечающий за operational security и устойчивость веб-сервиса.\n\n## Контекст\nТип сайта (marketing / SaaS / e-commerce), трафик, текущие контроли:\n\"[ОПИШИТЕ САЙТ, ТЕКУЩИЕ WAF/CDN, ЛОГИ, БЭКАПЫ]\"\n\n## Слои защиты (проверьте каждый)\n1. **Edge** — CDN, DDoS protection, bot management, geo/IP rules (без ложных блокировок критичных рынков).\n2. **WAF** — managed rulesets (OWASP CRS high-level), custom rules for login/API abuse; logging of blocks.\n3. **Application** — secure defaults, least privilege, input validation, authn/z, CSRF, CSP.\n4. **Secrets** — vault/KMS, no secrets in repo/client bundle, rotation policy.\n5. **Supply chain** — lockfiles, SCA (npm audit/Snyk/OSV), CI signing, dependency update cadence.\n6. **Logging & alerting (A09)** — auth success/fail, privilege changes, payment events; immutable logs; alerts on anomalies.\n7. **Backups & recovery** — encrypted backups, tested restore RTO/RPO.\n8. **Admin security** — SSO/MFA, IP allowlist or VPN, separate admin host.\n9. **Privacy & compliance hooks** — PII minimization, retention, cookie consent vs security cookies.\n10. **Incident readiness** — runbook, contacts, kill-switches, status page plan.\n\n## Формат ответа\n- Maturity score per layer (0–5) + target state\n- 30/60/90-day hardening roadmap\n- \"Minimum viable security\" for small teams vs enterprise baseline\n- Metrics: MTTD/MTTR, failed logins, WAF block rate, patch lag\n- Explicit disclaimer: defensive guidance only; obtain authorization for any active testing",
+    "tags": [
+      "security",
+      "hardening",
+      "waf",
+      "logging",
+      "defense-in-depth",
+      "ru"
+    ]
   }
 ]
