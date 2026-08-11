@@ -1,0 +1,35 @@
+
+> prompts-library@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+   ▲ Next.js 15.5.9
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.0.2:3001
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling /api/verify-categories ...
+ ✓ Compiled /api/verify-categories in 5.7s (338 modules)
+ ⨯ Error: supabaseUrl is required.
+    at eval (src/lib/supabase.ts:6:37)
+    at <unknown> (rsc)/./src/lib/supabase.ts (/app/.next/server/app/api/verify-categories/route.js:54:1)
+    at eval (webpack-internal:///(rsc)/./src/app/api/verify-categories/route.ts:6:71)
+    at <unknown> (rsc)/./src/app/api/verify-categories/route.ts (/app/.next/server/app/api/verify-categories/route.js:43:1)
+    at __webpack_exec__ (.next/server/app/api/verify-categories/route.js:173:39)
+    at <unknown> (.next/server/app/api/verify-categories/route.js:174:210)
+    at <unknown> (.next/server/app/api/verify-categories/route.js:174:47)
+    at Object.<anonymous> (.next/server/app/api/verify-categories/route.js:177:3)
+  4 | const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+  5 |
+> 6 | export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    |                                     ^
+  7 |
+  8 | // Для серверных операций
+  9 | export const supabaseAdmin = createClient( {
+  page: '/api/verify-categories'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 4.2s (679 modules)
+ GET /api/verify-categories 500 in 11446ms
+ ✓ Compiled in 970ms (449 modules)
