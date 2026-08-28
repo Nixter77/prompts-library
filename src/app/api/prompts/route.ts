@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server';
 import { supabaseAdmin } from '@/lib/supabase';
 import { slugifyCategory } from '@/lib/utils';
 
+// Input validation limits
+const TITLE_MAX_LENGTH = 200;
+const DESCRIPTION_MAX_LENGTH = 1000;
+const CATEGORY_MAX_LENGTH = 100;
+const PROMPT_TEXT_MAX_LENGTH = 10000;
+const TAG_MAX_LENGTH = 50;
+const MAX_TAGS = 20;
+
 export async function GET() {
   try {
     const { data: prompts, error } = await supabaseAdmin
@@ -77,6 +85,26 @@ export async function POST(request: Request) {
         { message: 'A prompt with this content already exists.' },
         { status: 409 }
       );
+    }
+
+    // Input length validation
+    if (title.length > TITLE_MAX_LENGTH) {
+      return NextResponse.json({ message: `Title exceeds maximum length of ${TITLE_MAX_LENGTH} characters.` }, { status: 400 });
+    }
+    if (description && description.length > DESCRIPTION_MAX_LENGTH) {
+      return NextResponse.json({ message: `Description exceeds maximum length of ${DESCRIPTION_MAX_LENGTH} characters.` }, { status: 400 });
+    }
+    if (category.length > CATEGORY_MAX_LENGTH) {
+      return NextResponse.json({ message: `Category exceeds maximum length of ${CATEGORY_MAX_LENGTH} characters.` }, { status: 400 });
+    }
+    if (promptText.length > PROMPT_TEXT_MAX_LENGTH) {
+      return NextResponse.json({ message: `Prompt text exceeds maximum length of ${PROMPT_TEXT_MAX_LENGTH} characters.` }, { status: 400 });
+    }
+    if (rawTags.length > MAX_TAGS) {
+      return NextResponse.json({ message: `Cannot have more than ${MAX_TAGS} tags.` }, { status: 400 });
+    }
+    if (rawTags.some((tag) => typeof tag === 'string' && tag.length > TAG_MAX_LENGTH)) {
+      return NextResponse.json({ message: `One or more tags exceed maximum length of ${TAG_MAX_LENGTH} characters.` }, { status: 400 });
     }
 
     const normalizedCategory = slugifyCategory(category);
