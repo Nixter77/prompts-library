@@ -15,11 +15,11 @@ const CategoryPage = async ({ params }: { params: Promise<{ category: string }> 
 
   const { data: allPrompts } = await supabaseAdmin
     .from('prompts')
-    .select('*');
+    .select('id, title, description, category');
 
   const prompts = (allPrompts || [])
     .filter((prompt) => slugifyCategory(prompt.category) === categorySlug)
-    .map((prompt) => ({ ...prompt, category: categorySlug })) as Prompt[];
+    .map((prompt) => ({ ...prompt, category: categorySlug })) as Pick<Prompt, 'id' | 'title' | 'description' | 'category'>[];
 
   let categoryLabel = formatCategoryLabel(categorySlug);
   if (categorySlug === 'programming') categoryLabel = t.category_programming;
