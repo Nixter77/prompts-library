@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { slugifyCategory } from '@/lib/utils';
 
@@ -87,7 +88,11 @@ const AddPromptPage = () => {
       <h1 className="text-4xl font-bold mb-8">Add a new prompt</h1>
       <form onSubmit={handleSubmit} className="w-full max-w-2xl flex flex-col gap-4">
         <div>
+          <label htmlFor="title" className="text-sm font-medium leading-none mb-2 block">
+            Title <span className="text-red-500">*</span>
+          </label>
           <Input
+            id="title"
             placeholder="Title"
             value={title}
             onChange={(e) => {
@@ -95,18 +100,30 @@ const AddPromptPage = () => {
               if (errors.title) setErrors(prev => ({...prev, title: ''}));
             }}
             required
+            disabled={loading}
           />
           {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
         </div>
 
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
+        <div>
+          <label htmlFor="description" className="text-sm font-medium leading-none mb-2 block">
+            Description
+          </label>
+          <Textarea
+            id="description"
+            placeholder="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            disabled={loading}
+          />
+        </div>
 
         <div>
+          <label htmlFor="category" className="text-sm font-medium leading-none mb-2 block">
+            Category <span className="text-red-500">*</span>
+          </label>
           <Input
+            id="category"
             placeholder="Category"
             value={category}
             onChange={(e) => {
@@ -114,12 +131,17 @@ const AddPromptPage = () => {
               if (errors.category) setErrors(prev => ({...prev, category: ''}));
             }}
             required
+            disabled={loading}
           />
           {errors.category && <p className="text-red-500 text-sm mt-1">{errors.category}</p>}
         </div>
 
         <div>
+          <label htmlFor="promptText" className="text-sm font-medium leading-none mb-2 block">
+            Prompt text <span className="text-red-500">*</span>
+          </label>
           <Textarea
+            id="promptText"
             placeholder="Prompt text"
             value={promptText}
             onChange={(e) => {
@@ -128,18 +150,26 @@ const AddPromptPage = () => {
             }}
             required
             rows={10}
+            disabled={loading}
           />
           {errors.promptText && <p className="text-red-500 text-sm mt-1">{errors.promptText}</p>}
         </div>
 
-        <Input
-          placeholder="Tags (comma-separated)"
-          value={tags}
-          onChange={(e) => setTags(e.target.value)}
-        />
+        <div>
+          <label htmlFor="tags" className="text-sm font-medium leading-none mb-2 block">
+            Tags
+          </label>
+          <Input
+            id="tags"
+            placeholder="Tags (comma-separated)"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
+            disabled={loading}
+          />
+        </div>
 
         <Button type="submit" disabled={loading}>
-          {loading ? 'Adding...' : 'Add prompt'}
+          {loading ? <Loader2 className="animate-spin" /> : 'Add prompt'}
         </Button>
       </form>
     </div>
