@@ -7,7 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Prompt } from '@/lib/types';
 
 interface CategoryClientPageProps {
-  prompts: Prompt[];
+  prompts: Pick<Prompt, 'id' | 'title' | 'description'>[];
   categorySlug: string;
   categoryLabel: string;
 }
