@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Prompt } from '@/lib/types';
 import { useRouter } from 'next/navigation';
+import { adminAuthHeaders, getAdminToken, setAdminToken } from '@/lib/adminToken';
 
 const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const [copied, setCopied] = useState(false);
@@ -47,6 +48,13 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
   const handleDelete = async () => {
     if (!confirm('Are you sure you want to delete this prompt? This action cannot be undone.')) return;
 
+    let adminToken = getAdminToken();
+    if (!adminToken) {
+      adminToken = (window.prompt('Enter admin token') ?? '').trim();
+      if (!adminToken) return;
+      setAdminToken(adminToken);
+    }
+
     setIsDeleting(true);
 
     try {
@@ -54,13 +62,16 @@ const PromptClientPage = ({ prompt }: { prompt: Prompt }) => {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
-          // In a real application, you would include authentication token here
-          // 'Authorization': `Bearer ${authToken}`,
+          ...adminAuthHeaders(adminToken),
         },
       });
 
+      if (res.status === 401) {
+        setAdminToken('');
+      }
+
       if (!res.ok) {
-        const errorData = await res.json();
+        const errorData = await res.json().catch(() => ({}));
         throw new Error(errorData.message || 'Failed to delete prompt');
       }
 

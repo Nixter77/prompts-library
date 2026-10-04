@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useRouter } from 'next/navigation';
 import { slugifyCategory } from '@/lib/utils';
+import { adminAuthHeaders, getAdminToken, setAdminToken } from '@/lib/adminToken';
 
 const AddPromptPage = () => {
   const [title, setTitle] = useState('');
@@ -15,7 +16,12 @@ const AddPromptPage = () => {
   const [tags, setTags] = useState('');
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [adminToken, setAdminTokenState] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    setAdminTokenState(getAdminToken());
+  }, []);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -30,6 +36,10 @@ const AddPromptPage = () => {
 
     if (!promptText.trim()) {
       newErrors.promptText = 'Prompt text is required';
+    }
+
+    if (!adminToken.trim()) {
+      newErrors.adminToken = 'Admin token is required';
     }
 
     setErrors(newErrors);
@@ -56,6 +66,7 @@ const AddPromptPage = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          ...adminAuthHeaders(adminToken.trim()),
         },
         body: JSON.stringify({
           title: title.trim(),
@@ -65,6 +76,11 @@ const AddPromptPage = () => {
           tags: tagList,
         }),
       });
+
+      if (res.status === 401) {
+        setAdminToken('');
+        setAdminTokenState('');
+      }
 
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
@@ -137,6 +153,22 @@ const AddPromptPage = () => {
           value={tags}
           onChange={(e) => setTags(e.target.value)}
         />
+
+        <div>
+          <Input
+            type="password"
+            placeholder="Admin token"
+            autoComplete="off"
+            value={adminToken}
+            onChange={(e) => {
+              setAdminTokenState(e.target.value);
+              setAdminToken(e.target.value.trim());
+              if (errors.adminToken) setErrors(prev => ({...prev, adminToken: ''}));
+            }}
+            required
+          />
+          {errors.adminToken && <p className="text-red-500 text-sm mt-1">{errors.adminToken}</p>}
+        </div>
 
         <Button type="submit" disabled={loading}>
           {loading ? 'Adding...' : 'Add prompt'}
