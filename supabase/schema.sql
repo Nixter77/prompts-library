@@ -8,6 +8,16 @@ CREATE TABLE prompts (
   created_at TIMESTAMP WITH TIME ZONE DEFAULT timezone('utc'::text, now()) NOT NULL
 );
 
+-- Row Level Security: public read-only access, no anon/authenticated write policies.
+-- Writes go through the server API (service-role key, protected by ADMIN_TOKEN).
+ALTER TABLE prompts ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Public read access to prompts"
+  ON prompts
+  FOR SELECT
+  TO anon, authenticated
+  USING (true);
+
 INSERT INTO prompts (title, description, category, prompt_text, tags) VALUES
 ('Generate a React component', 'Creates a functional React component with props.', 'programming', 'Generate a React functional component called MyComponent that accepts the following props: name (string), age (number).', '{"react", "typescript"}'),
 ('A futuristic cityscape', 'Generate a cyberpunk-style cityscape.', 'images', 'A sprawling, neon-lit futuristic cityscape at night, with flying vehicles and towering skyscrapers. Style: Cyberpunk, Blade Runner.', '{"midjourney", "cyberpunk"}'),
